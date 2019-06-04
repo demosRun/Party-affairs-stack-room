@@ -1,0 +1,100 @@
+<template lang="pug">
+.bookshelf-box
+  .bookshelf
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      
+      setTimeout(() => {
+        $emit('changeBookshelf', owo.global.activeItme, owo.global.activeKey)
+      }, 0)
+    },
+    event: {
+      changeBookshelf: function (name, activeItme, activeKey) {
+        console.log(activeItme, activeKey)
+        let html = ``
+        const activeItem = bookData[activeItme][activeKey]
+        for (const key in activeItem) {
+          if (activeItem.hasOwnProperty(key)) {
+            const element = activeItem[key]
+            // console.log(element)
+            if (element.title) {
+              html += `<div class="book-box"> <div class="book icon">${key}</div> <div class="info"> <h4>${element.title}</h4> <p>${element.text}</p> </div> </div>`
+            } else {
+              html += `<div class="book-box"> <div class="book icon">${key}</div> <div class="info"><p>${element.text}</p> </div> </div>`
+            }
+          }
+        }
+        this.$el.getElementsByClassName('bookshelf')[0].innerHTML = html
+      }
+    }
+  }
+</script>
+
+<style lang="less">
+.bookshelf-box {
+  height: calc(100% - 146px);
+  margin: 0 10px;
+  overflow: auto;
+}
+.bookshelf {
+  background-image: url('@&bookshelf.jpg&');
+  background-size: 100% 110px;
+  min-height: 100%;
+}
+.book-box {
+  height: 110px;
+  position: relative;
+}
+.book-box:after {
+  content: url('@&right.png&');
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 20px;
+}
+.info {
+  float: left;
+  height: 90px;
+  margin: 10px 0;
+  width: calc(100% - 110px);
+  h4 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #d1d0d0;
+    line-height: 16px;
+  }
+}
+.book {
+  height: 70px;
+  width: 50px;
+  margin: 10px;
+  float: left;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  color: #ffedb5;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  font-size: 18px;
+  background-image: url('@&book.png&');
+}
+</style>

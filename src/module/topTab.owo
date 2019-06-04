@@ -1,0 +1,72 @@
+<template lang="pug">
+ul.top-tab
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      setTimeout(() => {
+        $emit('changeTopBar')
+      }, 0)
+      
+    },
+    event: {
+      changeTopBar: function () {
+        let html = ''
+        const activeItem = owo.global.activeItme
+        let isFirst = true
+        for (let key in bookData[activeItem]) {
+          if (isFirst) {
+            owo.global.activeKey = key
+            html += `<li class="active" @click="changeItem">${key}</li>`
+            isFirst = false
+          } else {
+            html += `<li @click="changeItem">${key}</li>`
+          }
+        }
+        this.$el.innerHTML = html
+        setTimeout(() => {
+          _owo.handleEvent(this.$el, null, 'sd')
+        }, 0)
+      }
+    },
+    changeItem: function () {
+      const domList = this.$el.getElementsByTagName('li')
+      for (let element of domList) {
+        element.classList.remove('active')
+      }
+      // 点亮对应项目
+      this.$event.target.classList.add('active')
+      // 切换书架内容
+      owo.global.activeKey = this.$event.target.innerHTML
+      $emit('changeBookshelf', owo.global.activeItme, owo.global.activeKey)
+    }
+  }
+</script>
+
+<style lang="less">
+.top-tab {
+  height: 40px;
+  line-height: 40px;
+  overflow-x: auto;
+  padding: 0 5px;
+  width: calc(100% - 30px);
+  overflow-y: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  box-shadow: 0px 0px 5px #9e0000 inset;
+}
+li {
+  height: 32px;
+  line-height: 32px;
+  margin-right: 40px;
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+}
+.active {
+  font-size: 14px;
+  border-bottom: 1px solid #ffffff;
+}
+</style>

@@ -1,0 +1,783 @@
+16:06:10.417 DEBUG 获取到配置信息: 
+16:06:10.417 DEBUG {"basePath":"./","watcher":{"enable":true,"ignored":"./dist/*","depth":99},"outPut":{"minifyCss":false,"minifyJs":false,"addVersion":false},"serverPort":8000,"server":true,"autoReload":true,"remoteDebug":false,"root":"/src","entry":"one","title":"页面","outFolder":"./dist","resourceFolder":"./src/resource","headList":[{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}],"scriptList":[{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}],"styleList":[{"name":"main","src":"./src/main.css","resource":true}],"pageList":[{"main":true,"isPage":true,"name":"one","src":"./src/page/one.page","temple":"<temple name=\"one\" src=\"./src/page/one.page\" isPage=\"true\"></temple>","outerHTML":"<!DOCTYPE html>\r\n<html lang=\"zh-CN\">\r\n  <head>\r\n    <title>页面</title>\r\n    <!-- 页面的元信息 -->\r\n    <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"/>\r\n    <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no\"/>\r\n    <!-- css-output -->\r\n    <!-- animation-output -->\r\n  </head>\r\n  <body>\r\n    <!-- 页面区域 -->\r\n    <temple name=\"one\" src=\"./src/page/one.page\" isPage=\"true\"></temple>\r\n    <temple name=\"two\" src=\"./src/page/two.page\" isPage=\"true\"></temple>\r\n    <!-- script-output -->\r\n  </body>\r\n</html>"},{"isPage":true,"name":"two","src":"./src/page/two.page","temple":"<temple name=\"two\" src=\"./src/page/two.page\" isPage=\"true\"></temple>","outerHTML":"<!DOCTYPE html>\r\n<html lang=\"zh-CN\">\r\n  <head>\r\n    <title>页面</title>\r\n    <!-- 页面的元信息 -->\r\n    <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"/>\r\n    <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no\"/>\r\n    <!-- css-output -->\r\n    <!-- animation-output -->\r\n  </head>\r\n  <body>\r\n    <!-- 页面区域 -->\r\n    <div class=\"one ox\" template=\"one\" id=\"o-one\" style=\"display: none;\">\n    <div class=\"logo\"></div>\n    <div class=\"text\"></div>\n    <div class=\"button\" @click=\"close\"></div>\n  </div>\r\n    <temple name=\"two\" src=\"./src/page/two.page\" isPage=\"true\"></temple>\r\n    <!-- script-output -->\r\n  </body>\r\n</html>"}],"dev":{"basePath":"./","watcher":{"enable":true,"ignored":"./dist/*","depth":99},"outPut":{"minifyCss":false,"minifyJs":false,"addVersion":false},"serverPort":8000,"server":true,"autoReload":true,"remoteDebug":false},"build":{"basePath":"./","outPut":{"minifyCss":true,"minifyJs":true,"addVersion":true,"embedSize":10,"merge":false}}} 
+16:06:10.417 INFO  --------------------------- 开始编译 --------------------------- 
+16:06:10.417 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:06:10.417 INFO  首次启动! 
+16:06:10.417 INFO  生成版本号: cvey5mumsao 
+16:06:10.422 INFO  清理资源文件夹: D:\work\Party affairs stack room\dist\static 
+16:06:10.422 INFO  文件夹不存在: D:\work\Party affairs stack room\dist\static 
+16:06:10.422 INFO  创建文件夹: D:\work\Party affairs stack room\dist\static 
+16:06:10.422 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:06:10.422 DEBUG 读取网页标题: 页面 
+16:06:10.422 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:06:10.423 INFO  开始处理模块: one 
+16:06:10.423 DEBUG 处理模板: ./src/page/one.page 
+16:06:10.526 DEBUG 缓存模板: one./src/page/one.page 
+16:06:10.526 DEBUG 模板one处理用时: 103 毫秒! 
+16:06:10.526 INFO  开始处理模块: two 
+16:06:10.526 DEBUG 处理模板: ./src/page/two.page 
+16:06:10.836 INFO  开始处理模块: searchBar 
+16:06:10.836 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:06:10.851 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:06:10.851 DEBUG 模板searchBar处理用时: 15 毫秒! 
+16:06:10.854 INFO  开始处理模块: topTab 
+16:06:10.854 DEBUG 处理模板: ./src/module/topTab.owo 
+16:06:10.860 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:06:10.860 DEBUG 模板topTab处理用时: 6 毫秒! 
+16:06:10.861 INFO  开始处理模块: bookshelf 
+16:06:10.861 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:06:10.867 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:06:10.867 DEBUG 模板bookshelf处理用时: 6 毫秒! 
+16:06:10.868 INFO  开始处理模块: bottomBar 
+16:06:10.868 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:06:10.879 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:06:10.879 DEBUG 模板bottomBar处理用时: 11 毫秒! 
+16:06:10.882 DEBUG 缓存模板: two./src/page/two.page 
+16:06:10.882 DEBUG 模板two处理用时: 356 毫秒! 
+16:06:10.883 INFO  文件夹不存在: D:\work\Party affairs stack room\dist\static\resource 
+16:06:10.883 INFO  创建文件夹: D:\work\Party affairs stack room\dist\static\resource 
+16:06:10.884 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:06:10.884 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:06:10.884 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:06:10.884 DEBUG 处理资源: D:\work\Party affairs stack room\src\resource\logo.png,D:\work\Party affairs stack room\src\resource\one-text.png,D:\work\Party affairs stack room\src\resource\one-button.png,D:\work\Party affairs stack room\src\resource\bookshelf.jpg,D:\work\Party affairs stack room\src\resource\right.png,D:\work\Party affairs stack room\src\resource\book.png 
+16:06:10.885 INFO  css中的资源处理完毕! 
+16:06:10.885 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:06:10.913 INFO  正在处理script! 
+16:06:10.914 INFO  工程中包含多个页面! 
+16:06:10.914 DEBUG 页面中不包含切换动画! 
+16:06:11.684 INFO  文件夹不存在: D:\work\Party affairs stack room\dist\static\js 
+16:06:11.685 INFO  创建文件夹: D:\work\Party affairs stack room\dist\static\js 
+16:06:11.776 INFO  js中的资源处理完毕! 
+16:06:11.777 INFO  读取文件: C:\Users\PG\Documents\GitHub\PG\core\debug\autoReload.js 
+16:06:11.778 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:06:11.778 DEBUG 外部脚本数量: 2 
+16:06:11.778 DEBUG 处理脚本: jquery1.11.0 
+16:06:11.778 DEBUG 网络脚本: jquery1.11.0 
+16:06:11.778 DEBUG 处理脚本: main 
+16:06:11.778 DEBUG 不使用bable处理脚本! 
+16:06:11.778 INFO  读取文件: D:\work\Party affairs stack room\src\main.js 
+16:06:11.778 DEBUG 输出scriptData 
+16:06:11.778 DEBUG 判断是否可以输出Html! 
+16:06:11.778 DEBUG 还有没有经过处理的资源! 
+16:06:11.778 INFO  监控文件夹变化: D:\work\Party affairs stack room\src 
+16:06:11.790 INFO  服务器运行在: 127.0.0.1:8000 
+16:06:11.983 INFO  使用postcss处理完毕! 用时: 1098 毫秒 
+16:06:11.983 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:06:11.984 INFO  文件夹不存在: D:\work\Party affairs stack room\dist\static\css 
+16:06:11.984 INFO  创建文件夹: D:\work\Party affairs stack room\dist\static\css 
+16:06:11.984 INFO  开始处理附属css中的资源 
+16:06:11.984 INFO  附属css中的资源处理完毕! 
+16:06:11.984 DEBUG 判断是否可以输出Html! 
+16:06:11.984 DEBUG 准备输出html! 
+16:06:11.985 DEBUG 开始美化html 
+16:06:11.997 INFO  发送重新页面需要刷新命令! 
+16:06:12.026 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:06:12.026 INFO  读取成功: C:\Users\PG\Documents\GitHub\PG\core\debug\autoReload.js 
+16:06:12.026 INFO  读取成功: D:\work\Party affairs stack room\src\main.css 
+16:06:12.026 INFO  读取成功: D:\work\Party affairs stack room\src\main.js 
+16:06:12.046 INFO  写入文件: D:\work\Party affairs stack room\dist\static\js\autoReload.js 
+16:06:12.046 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\main.css 
+16:06:12.047 INFO  写入文件: D:\work\Party affairs stack room\dist\static\js\main.js 
+16:06:12.116 DEBUG 文件处理成功: 
+16:06:12.116 DEBUG D:\work\Party affairs stack room\dist\static\resource\logo.png 
+16:06:12.116 DEBUG D:\work\Party affairs stack room\dist\static\resource\one-text.png 
+16:06:12.116 DEBUG D:\work\Party affairs stack room\dist\static\resource\one-button.png 
+16:06:12.116 DEBUG D:\work\Party affairs stack room\dist\static\resource\bookshelf.jpg 
+16:06:12.116 DEBUG D:\work\Party affairs stack room\dist\static\resource\right.png 
+16:06:12.116 DEBUG D:\work\Party affairs stack room\dist\static\resource\book.png 
+16:07:10.165 INFO  file change: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:07:10.166 INFO  --------------------------- 开始编译 --------------------------- 
+16:07:10.166 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:07:10.166 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:07:10.166 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:07:10.166 DEBUG 读取网页标题: 页面 
+16:07:10.166 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:07:10.166 INFO  开始处理模块: one 
+16:07:10.166 DEBUG 处理模板: ./src/page/one.page 
+16:07:10.172 DEBUG 缓存模板: one./src/page/one.page 
+16:07:10.172 DEBUG 模板one处理用时: 6 毫秒! 
+16:07:10.172 INFO  开始处理模块: two 
+16:07:10.172 DEBUG 处理模板: ./src/page/two.page 
+16:07:10.180 INFO  开始处理模块: searchBar 
+16:07:10.180 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:07:10.189 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:07:10.189 DEBUG 模板searchBar处理用时: 9 毫秒! 
+16:07:10.193 INFO  开始处理模块: topTab 
+16:07:10.193 DEBUG 处理模板: ./src/module/topTab.owo 
+16:07:10.198 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:07:10.198 DEBUG 模板topTab处理用时: 5 毫秒! 
+16:07:10.198 INFO  开始处理模块: bookshelf 
+16:07:10.198 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:07:10.205 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:07:10.205 DEBUG 模板bookshelf处理用时: 7 毫秒! 
+16:07:10.206 INFO  开始处理模块: bottomBar 
+16:07:10.206 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:07:10.218 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:07:10.218 DEBUG 模板bottomBar处理用时: 12 毫秒! 
+16:07:10.221 DEBUG 缓存模板: two./src/page/two.page 
+16:07:10.221 DEBUG 模板two处理用时: 49 毫秒! 
+16:07:10.222 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:07:10.222 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:07:10.222 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:07:10.222 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:07:10.222 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:07:10.223 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:07:10.223 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:07:10.223 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:07:10.223 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:07:10.223 INFO  css中的资源处理完毕! 
+16:07:10.223 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:07:10.228 INFO  正在处理script! 
+16:07:10.228 INFO  工程中包含多个页面! 
+16:07:10.229 DEBUG 页面中不包含切换动画! 
+16:07:10.429 INFO  js中的资源处理完毕! 
+16:07:10.430 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:07:10.430 DEBUG 外部脚本数量: 2 
+16:07:10.430 DEBUG 处理脚本: jquery1.11.0 
+16:07:10.430 DEBUG 网络脚本: jquery1.11.0 
+16:07:10.430 DEBUG 处理脚本: main 
+16:07:10.430 DEBUG 不使用bable处理脚本! 
+16:07:10.430 DEBUG 输出scriptData 
+16:07:10.430 DEBUG 判断是否可以输出Html! 
+16:07:10.430 DEBUG 还有没有经过处理的资源! 
+16:07:10.563 INFO  使用postcss处理完毕! 用时: 340 毫秒 
+16:07:10.563 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:07:10.564 DEBUG 判断是否可以输出Html! 
+16:07:10.564 DEBUG 准备输出html! 
+16:07:10.564 DEBUG 开始美化html 
+16:07:10.569 INFO  发送重新页面需要刷新命令! 
+16:07:10.584 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:11:06.498 INFO  file change: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:11:06.499 INFO  --------------------------- 开始编译 --------------------------- 
+16:11:06.499 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:11:06.499 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:11:06.499 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:11:06.499 DEBUG 读取网页标题: 页面 
+16:11:06.499 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:11:06.499 INFO  开始处理模块: one 
+16:11:06.499 DEBUG 处理模板: ./src/page/one.page 
+16:11:06.505 DEBUG 缓存模板: one./src/page/one.page 
+16:11:06.505 DEBUG 模板one处理用时: 6 毫秒! 
+16:11:06.505 INFO  开始处理模块: two 
+16:11:06.506 DEBUG 处理模板: ./src/page/two.page 
+16:11:06.516 INFO  开始处理模块: searchBar 
+16:11:06.516 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:11:06.526 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:11:06.526 DEBUG 模板searchBar处理用时: 10 毫秒! 
+16:11:06.528 INFO  开始处理模块: topTab 
+16:11:06.528 DEBUG 处理模板: ./src/module/topTab.owo 
+16:11:06.534 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:11:06.534 DEBUG 模板topTab处理用时: 6 毫秒! 
+16:11:06.535 INFO  开始处理模块: bookshelf 
+16:11:06.535 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:11:06.544 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:11:06.544 DEBUG 模板bookshelf处理用时: 9 毫秒! 
+16:11:06.544 INFO  开始处理模块: bottomBar 
+16:11:06.544 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:11:06.553 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:11:06.553 DEBUG 模板bottomBar处理用时: 9 毫秒! 
+16:11:06.558 DEBUG 缓存模板: two./src/page/two.page 
+16:11:06.558 DEBUG 模板two处理用时: 52 毫秒! 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:11:06.558 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:11:06.558 INFO  css中的资源处理完毕! 
+16:11:06.558 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:11:06.562 INFO  正在处理script! 
+16:11:06.563 INFO  工程中包含多个页面! 
+16:11:06.563 DEBUG 页面中不包含切换动画! 
+16:11:06.727 INFO  js中的资源处理完毕! 
+16:11:06.728 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:11:06.728 DEBUG 外部脚本数量: 2 
+16:11:06.728 DEBUG 处理脚本: jquery1.11.0 
+16:11:06.728 DEBUG 网络脚本: jquery1.11.0 
+16:11:06.728 DEBUG 处理脚本: main 
+16:11:06.728 DEBUG 不使用bable处理脚本! 
+16:11:06.728 DEBUG 输出scriptData 
+16:11:06.728 DEBUG 判断是否可以输出Html! 
+16:11:06.728 DEBUG 还有没有经过处理的资源! 
+16:11:06.855 INFO  使用postcss处理完毕! 用时: 297 毫秒 
+16:11:06.855 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:11:06.855 DEBUG 判断是否可以输出Html! 
+16:11:06.855 DEBUG 准备输出html! 
+16:11:06.855 DEBUG 开始美化html 
+16:11:06.861 INFO  发送重新页面需要刷新命令! 
+16:11:06.861 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:13:44.990 INFO  file change: D:\work\Party affairs stack room\src\main.js 
+16:13:44.991 INFO  --------------------------- 开始编译 --------------------------- 
+16:13:44.991 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:13:44.991 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\main.js 
+16:13:44.991 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:13:44.991 DEBUG 读取网页标题: 页面 
+16:13:44.991 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:13:44.991 INFO  开始处理模块: one 
+16:13:44.991 DEBUG 处理模板: ./src/page/one.page 
+16:13:44.996 DEBUG 缓存模板: one./src/page/one.page 
+16:13:44.996 DEBUG 模板one处理用时: 5 毫秒! 
+16:13:44.996 INFO  开始处理模块: two 
+16:13:44.996 DEBUG 处理模板: ./src/page/two.page 
+16:13:45.003 INFO  开始处理模块: searchBar 
+16:13:45.003 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:13:45.012 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:13:45.012 DEBUG 模板searchBar处理用时: 9 毫秒! 
+16:13:45.014 INFO  开始处理模块: topTab 
+16:13:45.014 DEBUG 处理模板: ./src/module/topTab.owo 
+16:13:45.019 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:13:45.019 DEBUG 模板topTab处理用时: 5 毫秒! 
+16:13:45.019 INFO  开始处理模块: bookshelf 
+16:13:45.019 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:13:45.027 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:13:45.027 DEBUG 模板bookshelf处理用时: 8 毫秒! 
+16:13:45.027 INFO  开始处理模块: bottomBar 
+16:13:45.027 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:13:45.037 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:13:45.037 DEBUG 模板bottomBar处理用时: 10 毫秒! 
+16:13:45.040 DEBUG 缓存模板: two./src/page/two.page 
+16:13:45.040 DEBUG 模板two处理用时: 44 毫秒! 
+16:13:45.040 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:13:45.040 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:13:45.040 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:13:45.040 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:13:45.040 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:13:45.040 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:13:45.041 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:13:45.041 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:13:45.041 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:13:45.041 INFO  css中的资源处理完毕! 
+16:13:45.041 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:13:45.045 INFO  正在处理script! 
+16:13:45.046 INFO  工程中包含多个页面! 
+16:13:45.046 DEBUG 页面中不包含切换动画! 
+16:13:45.143 INFO  js中的资源处理完毕! 
+16:13:45.144 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:13:45.144 DEBUG 外部脚本数量: 2 
+16:13:45.144 DEBUG 处理脚本: jquery1.11.0 
+16:13:45.144 DEBUG 网络脚本: jquery1.11.0 
+16:13:45.144 DEBUG 处理脚本: main 
+16:13:45.144 DEBUG 不使用bable处理脚本! 
+16:13:45.144 INFO  读取文件: D:\work\Party affairs stack room\src\main.js 
+16:13:45.144 DEBUG 输出scriptData 
+16:13:45.144 DEBUG 判断是否可以输出Html! 
+16:13:45.144 DEBUG 还有没有经过处理的资源! 
+16:13:45.319 INFO  使用postcss处理完毕! 用时: 278 毫秒 
+16:13:45.319 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:13:45.319 DEBUG 判断是否可以输出Html! 
+16:13:45.319 DEBUG 准备输出html! 
+16:13:45.319 DEBUG 开始美化html 
+16:13:45.325 INFO  发送重新页面需要刷新命令! 
+16:13:45.327 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:13:45.327 INFO  读取成功: D:\work\Party affairs stack room\src\main.js 
+16:13:45.328 INFO  写入文件: D:\work\Party affairs stack room\dist\static\js\main.js 
+16:13:59.916 INFO  file change: D:\work\Party affairs stack room\src\main.js 
+16:13:59.916 INFO  --------------------------- 开始编译 --------------------------- 
+16:13:59.916 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:13:59.916 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\main.js 
+16:13:59.916 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:13:59.916 DEBUG 读取网页标题: 页面 
+16:13:59.916 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:13:59.917 INFO  开始处理模块: one 
+16:13:59.917 DEBUG 处理模板: ./src/page/one.page 
+16:13:59.923 DEBUG 缓存模板: one./src/page/one.page 
+16:13:59.923 DEBUG 模板one处理用时: 6 毫秒! 
+16:13:59.923 INFO  开始处理模块: two 
+16:13:59.923 DEBUG 处理模板: ./src/page/two.page 
+16:13:59.933 INFO  开始处理模块: searchBar 
+16:13:59.933 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:13:59.942 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:13:59.942 DEBUG 模板searchBar处理用时: 9 毫秒! 
+16:13:59.944 INFO  开始处理模块: topTab 
+16:13:59.944 DEBUG 处理模板: ./src/module/topTab.owo 
+16:13:59.951 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:13:59.951 DEBUG 模板topTab处理用时: 7 毫秒! 
+16:13:59.951 INFO  开始处理模块: bookshelf 
+16:13:59.951 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:13:59.959 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:13:59.959 DEBUG 模板bookshelf处理用时: 8 毫秒! 
+16:13:59.959 INFO  开始处理模块: bottomBar 
+16:13:59.959 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:13:59.970 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:13:59.970 DEBUG 模板bottomBar处理用时: 11 毫秒! 
+16:13:59.973 DEBUG 缓存模板: two./src/page/two.page 
+16:13:59.973 DEBUG 模板two处理用时: 50 毫秒! 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:13:59.975 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:13:59.975 INFO  css中的资源处理完毕! 
+16:13:59.975 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:13:59.978 INFO  正在处理script! 
+16:13:59.978 INFO  工程中包含多个页面! 
+16:13:59.978 DEBUG 页面中不包含切换动画! 
+16:14:00.165 INFO  js中的资源处理完毕! 
+16:14:00.165 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:14:00.165 DEBUG 外部脚本数量: 2 
+16:14:00.165 DEBUG 处理脚本: jquery1.11.0 
+16:14:00.165 DEBUG 网络脚本: jquery1.11.0 
+16:14:00.165 DEBUG 处理脚本: main 
+16:14:00.165 DEBUG 不使用bable处理脚本! 
+16:14:00.165 INFO  读取文件: D:\work\Party affairs stack room\src\main.js 
+16:14:00.165 DEBUG 输出scriptData 
+16:14:00.165 DEBUG 判断是否可以输出Html! 
+16:14:00.165 DEBUG 还有没有经过处理的资源! 
+16:14:00.289 INFO  使用postcss处理完毕! 用时: 314 毫秒 
+16:14:00.289 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:14:00.289 DEBUG 判断是否可以输出Html! 
+16:14:00.289 DEBUG 准备输出html! 
+16:14:00.289 DEBUG 开始美化html 
+16:14:00.294 INFO  发送重新页面需要刷新命令! 
+16:14:00.297 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:14:00.297 INFO  读取成功: D:\work\Party affairs stack room\src\main.js 
+16:14:00.298 INFO  写入文件: D:\work\Party affairs stack room\dist\static\js\main.js 
+16:14:07.135 INFO  file change: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:14:07.136 INFO  --------------------------- 开始编译 --------------------------- 
+16:14:07.136 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:14:07.136 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:14:07.136 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:14:07.136 DEBUG 读取网页标题: 页面 
+16:14:07.136 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:14:07.136 INFO  开始处理模块: one 
+16:14:07.136 DEBUG 处理模板: ./src/page/one.page 
+16:14:07.140 DEBUG 缓存模板: one./src/page/one.page 
+16:14:07.140 DEBUG 模板one处理用时: 4 毫秒! 
+16:14:07.140 INFO  开始处理模块: two 
+16:14:07.140 DEBUG 处理模板: ./src/page/two.page 
+16:14:07.147 INFO  开始处理模块: searchBar 
+16:14:07.147 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:14:07.152 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:14:07.152 DEBUG 模板searchBar处理用时: 5 毫秒! 
+16:14:07.154 INFO  开始处理模块: topTab 
+16:14:07.154 DEBUG 处理模板: ./src/module/topTab.owo 
+16:14:07.159 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:14:07.159 DEBUG 模板topTab处理用时: 5 毫秒! 
+16:14:07.159 INFO  开始处理模块: bookshelf 
+16:14:07.159 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:14:07.168 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:14:07.168 DEBUG 模板bookshelf处理用时: 9 毫秒! 
+16:14:07.169 INFO  开始处理模块: bottomBar 
+16:14:07.169 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:14:07.180 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:14:07.180 DEBUG 模板bottomBar处理用时: 11 毫秒! 
+16:14:07.184 DEBUG 缓存模板: two./src/page/two.page 
+16:14:07.184 DEBUG 模板two处理用时: 44 毫秒! 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:14:07.184 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:14:07.184 INFO  css中的资源处理完毕! 
+16:14:07.184 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:14:07.188 INFO  正在处理script! 
+16:14:07.188 INFO  工程中包含多个页面! 
+16:14:07.189 DEBUG 页面中不包含切换动画! 
+16:14:07.276 INFO  js中的资源处理完毕! 
+16:14:07.277 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:14:07.277 DEBUG 外部脚本数量: 2 
+16:14:07.277 DEBUG 处理脚本: jquery1.11.0 
+16:14:07.277 DEBUG 网络脚本: jquery1.11.0 
+16:14:07.277 DEBUG 处理脚本: main 
+16:14:07.277 DEBUG 不使用bable处理脚本! 
+16:14:07.277 DEBUG 输出scriptData 
+16:14:07.277 DEBUG 判断是否可以输出Html! 
+16:14:07.277 DEBUG 还有没有经过处理的资源! 
+16:14:07.398 INFO  使用postcss处理完毕! 用时: 214 毫秒 
+16:14:07.398 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:14:07.399 DEBUG 判断是否可以输出Html! 
+16:14:07.399 DEBUG 准备输出html! 
+16:14:07.399 DEBUG 开始美化html 
+16:14:07.403 INFO  发送重新页面需要刷新命令! 
+16:14:07.405 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:14:25.410 INFO  file change: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:14:25.410 INFO  --------------------------- 开始编译 --------------------------- 
+16:14:25.410 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:14:25.410 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:14:25.410 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:14:25.411 DEBUG 读取网页标题: 页面 
+16:14:25.411 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:14:25.411 INFO  开始处理模块: one 
+16:14:25.411 DEBUG 处理模板: ./src/page/one.page 
+16:14:25.417 DEBUG 缓存模板: one./src/page/one.page 
+16:14:25.417 DEBUG 模板one处理用时: 6 毫秒! 
+16:14:25.417 INFO  开始处理模块: two 
+16:14:25.417 DEBUG 处理模板: ./src/page/two.page 
+16:14:25.424 INFO  开始处理模块: searchBar 
+16:14:25.424 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:14:25.430 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:14:25.430 DEBUG 模板searchBar处理用时: 6 毫秒! 
+16:14:25.432 INFO  开始处理模块: topTab 
+16:14:25.432 DEBUG 处理模板: ./src/module/topTab.owo 
+16:14:25.436 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:14:25.436 DEBUG 模板topTab处理用时: 4 毫秒! 
+16:14:25.436 INFO  开始处理模块: bookshelf 
+16:14:25.436 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:14:25.442 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:14:25.442 DEBUG 模板bookshelf处理用时: 6 毫秒! 
+16:14:25.442 INFO  开始处理模块: bottomBar 
+16:14:25.442 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:14:25.451 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:14:25.451 DEBUG 模板bottomBar处理用时: 9 毫秒! 
+16:14:25.453 DEBUG 缓存模板: two./src/page/two.page 
+16:14:25.453 DEBUG 模板two处理用时: 36 毫秒! 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:14:25.453 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:14:25.453 INFO  css中的资源处理完毕! 
+16:14:25.453 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:14:25.456 INFO  正在处理script! 
+16:14:25.457 INFO  工程中包含多个页面! 
+16:14:25.457 DEBUG 页面中不包含切换动画! 
+16:14:25.592 INFO  js中的资源处理完毕! 
+16:14:25.593 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:14:25.593 DEBUG 外部脚本数量: 2 
+16:14:25.593 DEBUG 处理脚本: jquery1.11.0 
+16:14:25.593 DEBUG 网络脚本: jquery1.11.0 
+16:14:25.593 DEBUG 处理脚本: main 
+16:14:25.593 DEBUG 不使用bable处理脚本! 
+16:14:25.593 DEBUG 输出scriptData 
+16:14:25.593 DEBUG 判断是否可以输出Html! 
+16:14:25.593 DEBUG 还有没有经过处理的资源! 
+16:14:25.716 INFO  使用postcss处理完毕! 用时: 263 毫秒 
+16:14:25.716 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:14:25.716 DEBUG 判断是否可以输出Html! 
+16:14:25.716 DEBUG 准备输出html! 
+16:14:25.716 DEBUG 开始美化html 
+16:14:25.723 INFO  发送重新页面需要刷新命令! 
+16:14:25.724 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:16:07.245 INFO  file change: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:16:07.246 INFO  --------------------------- 开始编译 --------------------------- 
+16:16:07.246 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:16:07.246 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:16:07.246 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:16:07.246 DEBUG 读取网页标题: 页面 
+16:16:07.247 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:16:07.247 INFO  开始处理模块: one 
+16:16:07.247 DEBUG 处理模板: ./src/page/one.page 
+16:16:07.251 DEBUG 缓存模板: one./src/page/one.page 
+16:16:07.251 DEBUG 模板one处理用时: 4 毫秒! 
+16:16:07.251 INFO  开始处理模块: two 
+16:16:07.251 DEBUG 处理模板: ./src/page/two.page 
+16:16:07.260 INFO  开始处理模块: searchBar 
+16:16:07.260 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:16:07.268 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:16:07.268 DEBUG 模板searchBar处理用时: 8 毫秒! 
+16:16:07.272 INFO  开始处理模块: topTab 
+16:16:07.272 DEBUG 处理模板: ./src/module/topTab.owo 
+16:16:07.277 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:16:07.277 DEBUG 模板topTab处理用时: 5 毫秒! 
+16:16:07.278 INFO  开始处理模块: bookshelf 
+16:16:07.278 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:16:07.284 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:16:07.284 DEBUG 模板bookshelf处理用时: 6 毫秒! 
+16:16:07.285 INFO  开始处理模块: bottomBar 
+16:16:07.286 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:16:07.300 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:16:07.300 DEBUG 模板bottomBar处理用时: 14 毫秒! 
+16:16:07.303 DEBUG 缓存模板: two./src/page/two.page 
+16:16:07.303 DEBUG 模板two处理用时: 52 毫秒! 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:16:07.303 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:16:07.303 INFO  css中的资源处理完毕! 
+16:16:07.303 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:16:07.310 INFO  正在处理script! 
+16:16:07.311 INFO  工程中包含多个页面! 
+16:16:07.311 DEBUG 页面中不包含切换动画! 
+16:16:07.484 INFO  js中的资源处理完毕! 
+16:16:07.485 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:16:07.485 DEBUG 外部脚本数量: 2 
+16:16:07.485 DEBUG 处理脚本: jquery1.11.0 
+16:16:07.485 DEBUG 网络脚本: jquery1.11.0 
+16:16:07.485 DEBUG 处理脚本: main 
+16:16:07.485 DEBUG 不使用bable处理脚本! 
+16:16:07.485 DEBUG 输出scriptData 
+16:16:07.485 DEBUG 判断是否可以输出Html! 
+16:16:07.485 DEBUG 还有没有经过处理的资源! 
+16:16:07.612 INFO  使用postcss处理完毕! 用时: 309 毫秒 
+16:16:07.612 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:16:07.613 DEBUG 判断是否可以输出Html! 
+16:16:07.613 DEBUG 准备输出html! 
+16:16:07.613 DEBUG 开始美化html 
+16:16:07.619 INFO  发送重新页面需要刷新命令! 
+16:16:07.633 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:17:03.315 INFO  file change: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:17:03.316 INFO  --------------------------- 开始编译 --------------------------- 
+16:17:03.316 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:17:03.316 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:17:03.316 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:17:03.316 DEBUG 读取网页标题: 页面 
+16:17:03.316 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:17:03.316 INFO  开始处理模块: one 
+16:17:03.316 DEBUG 处理模板: ./src/page/one.page 
+16:17:03.323 DEBUG 缓存模板: one./src/page/one.page 
+16:17:03.323 DEBUG 模板one处理用时: 7 毫秒! 
+16:17:03.323 INFO  开始处理模块: two 
+16:17:03.323 DEBUG 处理模板: ./src/page/two.page 
+16:17:03.330 INFO  开始处理模块: searchBar 
+16:17:03.330 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:17:03.336 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:17:03.336 DEBUG 模板searchBar处理用时: 6 毫秒! 
+16:17:03.339 INFO  开始处理模块: topTab 
+16:17:03.339 DEBUG 处理模板: ./src/module/topTab.owo 
+16:17:03.345 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:17:03.345 DEBUG 模板topTab处理用时: 6 毫秒! 
+16:17:03.345 INFO  开始处理模块: bookshelf 
+16:17:03.345 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:17:03.350 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:17:03.350 DEBUG 模板bookshelf处理用时: 5 毫秒! 
+16:17:03.350 INFO  开始处理模块: bottomBar 
+16:17:03.350 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:17:03.363 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:17:03.363 DEBUG 模板bottomBar处理用时: 13 毫秒! 
+16:17:03.367 DEBUG 缓存模板: two./src/page/two.page 
+16:17:03.367 DEBUG 模板two处理用时: 44 毫秒! 
+16:17:03.367 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:17:03.367 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:17:03.367 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:17:03.368 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:17:03.368 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:17:03.368 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:17:03.368 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:17:03.368 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:17:03.368 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:17:03.368 INFO  css中的资源处理完毕! 
+16:17:03.368 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:17:03.371 INFO  正在处理script! 
+16:17:03.372 INFO  工程中包含多个页面! 
+16:17:03.372 DEBUG 页面中不包含切换动画! 
+16:17:03.518 INFO  js中的资源处理完毕! 
+16:17:03.519 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:17:03.519 DEBUG 外部脚本数量: 2 
+16:17:03.519 DEBUG 处理脚本: jquery1.11.0 
+16:17:03.519 DEBUG 网络脚本: jquery1.11.0 
+16:17:03.519 DEBUG 处理脚本: main 
+16:17:03.519 DEBUG 不使用bable处理脚本! 
+16:17:03.519 DEBUG 输出scriptData 
+16:17:03.519 DEBUG 判断是否可以输出Html! 
+16:17:03.519 DEBUG 还有没有经过处理的资源! 
+16:17:03.644 INFO  使用postcss处理完毕! 用时: 276 毫秒 
+16:17:03.644 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:17:03.645 DEBUG 判断是否可以输出Html! 
+16:17:03.645 DEBUG 准备输出html! 
+16:17:03.645 DEBUG 开始美化html 
+16:17:03.650 INFO  发送重新页面需要刷新命令! 
+16:17:03.652 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:17:37.562 INFO  file change: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:17:37.563 INFO  --------------------------- 开始编译 --------------------------- 
+16:17:37.563 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:17:37.563 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\module\searchBar.owo 
+16:17:37.563 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:17:37.563 DEBUG 读取网页标题: 页面 
+16:17:37.563 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:17:37.563 INFO  开始处理模块: one 
+16:17:37.563 DEBUG 处理模板: ./src/page/one.page 
+16:17:37.569 DEBUG 缓存模板: one./src/page/one.page 
+16:17:37.569 DEBUG 模板one处理用时: 6 毫秒! 
+16:17:37.569 INFO  开始处理模块: two 
+16:17:37.569 DEBUG 处理模板: ./src/page/two.page 
+16:17:37.575 INFO  开始处理模块: searchBar 
+16:17:37.575 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:17:37.580 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:17:37.580 DEBUG 模板searchBar处理用时: 5 毫秒! 
+16:17:37.583 INFO  开始处理模块: topTab 
+16:17:37.583 DEBUG 处理模板: ./src/module/topTab.owo 
+16:17:37.587 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:17:37.587 DEBUG 模板topTab处理用时: 4 毫秒! 
+16:17:37.587 INFO  开始处理模块: bookshelf 
+16:17:37.587 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:17:37.594 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:17:37.594 DEBUG 模板bookshelf处理用时: 7 毫秒! 
+16:17:37.595 INFO  开始处理模块: bottomBar 
+16:17:37.595 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:17:37.606 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:17:37.606 DEBUG 模板bottomBar处理用时: 11 毫秒! 
+16:17:37.609 DEBUG 缓存模板: two./src/page/two.page 
+16:17:37.609 DEBUG 模板two处理用时: 40 毫秒! 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:17:37.610 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:17:37.610 INFO  css中的资源处理完毕! 
+16:17:37.610 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:17:37.615 INFO  正在处理script! 
+16:17:37.616 INFO  工程中包含多个页面! 
+16:17:37.616 DEBUG 页面中不包含切换动画! 
+16:17:37.712 INFO  js中的资源处理完毕! 
+16:17:37.713 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:17:37.713 DEBUG 外部脚本数量: 2 
+16:17:37.713 DEBUG 处理脚本: jquery1.11.0 
+16:17:37.713 DEBUG 网络脚本: jquery1.11.0 
+16:17:37.713 DEBUG 处理脚本: main 
+16:17:37.713 DEBUG 不使用bable处理脚本! 
+16:17:37.713 DEBUG 输出scriptData 
+16:17:37.713 DEBUG 判断是否可以输出Html! 
+16:17:37.713 DEBUG 还有没有经过处理的资源! 
+16:17:37.834 INFO  使用postcss处理完毕! 用时: 224 毫秒 
+16:17:37.834 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:17:37.834 DEBUG 判断是否可以输出Html! 
+16:17:37.834 DEBUG 准备输出html! 
+16:17:37.834 DEBUG 开始美化html 
+16:17:37.840 INFO  发送重新页面需要刷新命令! 
+16:17:37.856 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:17:58.755 INFO  file change: D:\work\Party affairs stack room\src\main.css 
+16:17:58.757 INFO  --------------------------- 开始编译 --------------------------- 
+16:17:58.757 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:17:58.757 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\main.css 
+16:17:58.757 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:17:58.757 DEBUG 读取网页标题: 页面 
+16:17:58.757 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:17:58.757 INFO  开始处理模块: one 
+16:17:58.757 DEBUG 处理模板: ./src/page/one.page 
+16:17:58.764 DEBUG 缓存模板: one./src/page/one.page 
+16:17:58.764 DEBUG 模板one处理用时: 7 毫秒! 
+16:17:58.764 INFO  开始处理模块: two 
+16:17:58.764 DEBUG 处理模板: ./src/page/two.page 
+16:17:58.770 INFO  开始处理模块: searchBar 
+16:17:58.770 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:17:58.777 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:17:58.777 DEBUG 模板searchBar处理用时: 7 毫秒! 
+16:17:58.779 INFO  开始处理模块: topTab 
+16:17:58.779 DEBUG 处理模板: ./src/module/topTab.owo 
+16:17:58.782 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:17:58.782 DEBUG 模板topTab处理用时: 3 毫秒! 
+16:17:58.783 INFO  开始处理模块: bookshelf 
+16:17:58.783 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:17:58.790 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:17:58.790 DEBUG 模板bookshelf处理用时: 7 毫秒! 
+16:17:58.791 INFO  开始处理模块: bottomBar 
+16:17:58.791 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:17:58.801 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:17:58.801 DEBUG 模板bottomBar处理用时: 10 毫秒! 
+16:17:58.806 DEBUG 缓存模板: two./src/page/two.page 
+16:17:58.806 DEBUG 模板two处理用时: 42 毫秒! 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:17:58.807 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:17:58.807 INFO  css中的资源处理完毕! 
+16:17:58.807 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:17:58.810 INFO  正在处理script! 
+16:17:58.810 INFO  工程中包含多个页面! 
+16:17:58.810 DEBUG 页面中不包含切换动画! 
+16:17:58.951 INFO  js中的资源处理完毕! 
+16:17:58.951 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:17:58.951 DEBUG 外部脚本数量: 2 
+16:17:58.951 DEBUG 处理脚本: jquery1.11.0 
+16:17:58.951 DEBUG 网络脚本: jquery1.11.0 
+16:17:58.951 DEBUG 处理脚本: main 
+16:17:58.951 DEBUG 不使用bable处理脚本! 
+16:17:58.951 DEBUG 输出scriptData 
+16:17:58.951 DEBUG 判断是否可以输出Html! 
+16:17:58.951 DEBUG 还有没有经过处理的资源! 
+16:17:59.080 INFO  使用postcss处理完毕! 用时: 273 毫秒 
+16:17:59.080 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:17:59.080 INFO  开始处理附属css中的资源 
+16:17:59.080 INFO  附属css中的资源处理完毕! 
+16:17:59.080 DEBUG 判断是否可以输出Html! 
+16:17:59.081 DEBUG 准备输出html! 
+16:17:59.081 DEBUG 开始美化html 
+16:17:59.086 INFO  发送重新页面需要刷新命令! 
+16:17:59.087 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:17:59.088 INFO  读取成功: D:\work\Party affairs stack room\src\main.css 
+16:17:59.088 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\main.css 
+16:18:47.411 INFO  file change: D:\work\Party affairs stack room\src\main.css 
+16:18:47.412 INFO  --------------------------- 开始编译 --------------------------- 
+16:18:47.412 INFO  程序运行目录: D:\work\Party affairs stack room 
+16:18:47.412 INFO  刷新模式,变化目录: D:\work\Party affairs stack room\src\main.css 
+16:18:47.412 INFO  读取模板文件: C:\Users\PG\Documents\GitHub\PG\lib\index.html 
+16:18:47.412 DEBUG 读取网页标题: 页面 
+16:18:47.412 DEBUG 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"}] 
+16:18:47.412 INFO  开始处理模块: one 
+16:18:47.412 DEBUG 处理模板: ./src/page/one.page 
+16:18:47.417 DEBUG 缓存模板: one./src/page/one.page 
+16:18:47.417 DEBUG 模板one处理用时: 5 毫秒! 
+16:18:47.417 INFO  开始处理模块: two 
+16:18:47.417 DEBUG 处理模板: ./src/page/two.page 
+16:18:47.422 INFO  开始处理模块: searchBar 
+16:18:47.422 DEBUG 处理模板: ./src/module/searchBar.owo 
+16:18:47.428 DEBUG 缓存模板: searchBar./src/module/searchBar.owo 
+16:18:47.428 DEBUG 模板searchBar处理用时: 6 毫秒! 
+16:18:47.431 INFO  开始处理模块: topTab 
+16:18:47.431 DEBUG 处理模板: ./src/module/topTab.owo 
+16:18:47.435 DEBUG 缓存模板: topTab./src/module/topTab.owo 
+16:18:47.435 DEBUG 模板topTab处理用时: 4 毫秒! 
+16:18:47.436 INFO  开始处理模块: bookshelf 
+16:18:47.436 DEBUG 处理模板: ./src/module/bookshelf.owo 
+16:18:47.443 DEBUG 缓存模板: bookshelf./src/module/bookshelf.owo 
+16:18:47.443 DEBUG 模板bookshelf处理用时: 7 毫秒! 
+16:18:47.443 INFO  开始处理模块: bottomBar 
+16:18:47.443 DEBUG 处理模板: ./src/module/bottomBar.owo 
+16:18:47.455 DEBUG 缓存模板: bottomBar./src/module/bottomBar.owo 
+16:18:47.455 DEBUG 模板bottomBar处理用时: 12 毫秒! 
+16:18:47.458 DEBUG 缓存模板: two./src/page/two.page 
+16:18:47.459 DEBUG 模板two处理用时: 42 毫秒! 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\bookshelf.jpg 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\right.png 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\book.png 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\logo.png 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-text.png 
+16:18:47.459 DEBUG 忽略文件: D:\work\Party affairs stack room\src\resource\one-button.png 
+16:18:47.459 INFO  css中的资源处理完毕! 
+16:18:47.459 DEBUG 使用postcss处理样式，使用了2个插件! 
+16:18:47.466 INFO  正在处理script! 
+16:18:47.466 INFO  工程中包含多个页面! 
+16:18:47.467 DEBUG 页面中不包含切换动画! 
+16:18:47.574 INFO  js中的资源处理完毕! 
+16:18:47.574 DEBUG 处理引用脚本: [{"name":"jquery1.11.0","src":"http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"},{"name":"main","src":"./src/main.js"}] 
+16:18:47.574 DEBUG 外部脚本数量: 2 
+16:18:47.574 DEBUG 处理脚本: jquery1.11.0 
+16:18:47.574 DEBUG 网络脚本: jquery1.11.0 
+16:18:47.574 DEBUG 处理脚本: main 
+16:18:47.574 DEBUG 不使用bable处理脚本! 
+16:18:47.574 DEBUG 输出scriptData 
+16:18:47.574 DEBUG 判断是否可以输出Html! 
+16:18:47.574 DEBUG 还有没有经过处理的资源! 
+16:18:47.697 INFO  使用postcss处理完毕! 用时: 238 毫秒 
+16:18:47.697 DEBUG 需要经过特殊处理的css: [["[template=one] .one:",".one[template=one]:"],["[template=one] .one ",".one[template=one] "],["[template=one] .one{",".one[template=one]{"],["[template=one] div:","div[template=one]:"],["[template=one] div ","div[template=one] "],["[template=one] div{","div[template=one]{"],["[template=searchBar] .search-bar:",".search-bar[template=searchBar]:"],["[template=searchBar] .search-bar ",".search-bar[template=searchBar] "],["[template=searchBar] .search-bar{",".search-bar[template=searchBar]{"],["[template=searchBar] div:","div[template=searchBar]:"],["[template=searchBar] div ","div[template=searchBar] "],["[template=searchBar] div{","div[template=searchBar]{"],["[template=topTab] .top-tab:",".top-tab[template=topTab]:"],["[template=topTab] .top-tab ",".top-tab[template=topTab] "],["[template=topTab] .top-tab{",".top-tab[template=topTab]{"],["[template=topTab] ul:","ul[template=topTab]:"],["[template=topTab] ul ","ul[template=topTab] "],["[template=topTab] ul{","ul[template=topTab]{"],["[template=bookshelf] .bookshelf-box:",".bookshelf-box[template=bookshelf]:"],["[template=bookshelf] .bookshelf-box ",".bookshelf-box[template=bookshelf] "],["[template=bookshelf] .bookshelf-box{",".bookshelf-box[template=bookshelf]{"],["[template=bookshelf] div:","div[template=bookshelf]:"],["[template=bookshelf] div ","div[template=bookshelf] "],["[template=bookshelf] div{","div[template=bookshelf]{"],["[template=bottomBar] .bottom-tab:",".bottom-tab[template=bottomBar]:"],["[template=bottomBar] .bottom-tab ",".bottom-tab[template=bottomBar] "],["[template=bottomBar] .bottom-tab{",".bottom-tab[template=bottomBar]{"],["[template=bottomBar] ul:","ul[template=bottomBar]:"],["[template=bottomBar] ul ","ul[template=bottomBar] "],["[template=bottomBar] ul{","ul[template=bottomBar]{"],["[template=two] .two:",".two[template=two]:"],["[template=two] .two ",".two[template=two] "],["[template=two] .two{",".two[template=two]{"],["[template=two] div:","div[template=two]:"],["[template=two] div ","div[template=two] "],["[template=two] div{","div[template=two]{"]] 
+16:18:47.698 INFO  开始处理附属css中的资源 
+16:18:47.698 INFO  附属css中的资源处理完毕! 
+16:18:47.698 DEBUG 判断是否可以输出Html! 
+16:18:47.698 DEBUG 准备输出html! 
+16:18:47.698 DEBUG 开始美化html 
+16:18:47.702 INFO  发送重新页面需要刷新命令! 
+16:18:47.721 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\owo.main.css 
+16:18:47.721 INFO  读取成功: D:\work\Party affairs stack room\src\main.css 
+16:18:47.732 INFO  写入文件: D:\work\Party affairs stack room\dist\static\css\main.css 

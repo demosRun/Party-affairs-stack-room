@@ -1,0 +1,54 @@
+<template lang="pug">
+.two
+  temple(name="searchBar", src="./src/module/searchBar.owo")
+  temple(name="topTab", src="./src/module/topTab.owo")
+  temple(name="bookshelf", src="./src/module/bookshelf.owo")
+  temple(name="bottomBar", src="./src/module/bottomBar.owo")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+
+    },
+    close: function () {
+      $go('two', 'moveToLeft', 'moveFromRight')
+    }
+  }
+</script>
+
+<style lang="less">
+.one {
+  background-color: #c82923;
+}
+.logo {
+  width: 160px;
+  height: 104px;
+  position: absolute;
+  left: 55px;
+  top: 77px;
+  background-image: url('@&logo.png&');
+}
+.text {
+  width: 170px;
+  height: 557px;
+  background-image: url('@&one-text.png&');
+  background-position: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.button {
+  width: 254px;
+  height: 77px;
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url('@&one-button.png&');
+}
+</style>

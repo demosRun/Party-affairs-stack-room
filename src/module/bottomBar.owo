@@ -1,0 +1,76 @@
+<template lang="pug">
+ul.bottom-tab
+  //-  固定的三列
+  li(@click="changeItem('党章党规')")
+    .icon &#xe6c7;
+    p 党章党规
+  li(@click="changeItem('组工文件')")
+    .icon &#xe64b;
+    p 组工文件
+  li(@click="changeItem('党务知识')")
+    .icon &#xe62f;
+    p 党务知识
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      setTimeout(() => {
+        this.$el.getElementsByTagName('li')[0].classList.add('active')
+      }, 0)
+    },
+    changeItem: function (item) {
+      const domList = this.$el.getElementsByTagName('li')
+      for (let element of domList) {
+        element.classList.remove('active')
+      }
+      this.$event.target.classList.add('active')
+      owo.global.activeItme = item
+      $emit('changeTopBar')
+      setTimeout(() => {
+        $emit('changeBookshelf', owo.global.activeItme, owo.global.activeKey)
+      }, 0)
+    }
+  }
+</script>
+
+<style lang="less">
+.bottom-tab {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  border-top: 1px solid #b11616;
+}
+.icon {
+  font-size: 22px;
+  display: block;
+  line-height: 24px;
+  pointer-events: none;
+}
+li {
+  width: calc(33% - 9px);
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  line-height: 21px;
+  height: 44px;
+  margin: 3px;
+}
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  font-size: 12px;
+  pointer-events: none;
+}
+.active {
+  color: #f7c192;
+  background-color: #a11f1c;
+  border-radius: 5px;
+}
+</style>

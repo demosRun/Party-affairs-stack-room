@@ -1,0 +1,145 @@
+<template>
+  <div class="search-bar">
+    <div class="search-box">
+      <div class="icon-box">
+        <svg t="1559538420726" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2384" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px"><path d="M740.2496 696.183467l106.5984 105.745066-44.919467 43.690667-105.984-105.130667A339.968 339.968 0 0 1 477.866667 819.2C289.348267 819.2 136.533333 666.385067 136.533333 477.866667S289.348267 136.533333 477.866667 136.533333s341.333333 152.814933 341.333333 341.333334a339.968 339.968 0 0 1-78.9504 218.3168zM477.866667 750.933333a273.066667 273.066667 0 1 0 0-546.133333 273.066667 273.066667 0 0 0 0 546.133333z" p-id="2385"></path></svg>
+      </div>
+      <input type="text" @input="inputValue" @focus="focus" />
+    </div>
+    <div class="search-panel"></div>
+    <div class="cancel" @click="cancel">取消</div>
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      // 注册输入事件
+      this.$el.getElementsByTagName('input')[0].oninput = this.inputValue
+    },
+    // 取消事件
+    cancel: function () {
+      // console.log(this)
+      this.$el.classList.remove('search-bar-active')
+      this.$el.getElementsByTagName('input')[0].value = ''
+    },
+    // 搜索条获取焦点事件
+    focus: function () {
+      setTimeout(() => {
+        this.$el.classList.add('search-bar-active')
+      }, 0)
+    },
+    // 输入事件
+    inputValue: function (e) {
+      const searchValue = e.target.value
+      if (searchValue === '') {
+        document.getElementsByClassName('search-panel')[0].innerHTML = ''
+        return
+      }
+      let searchHtml = ``
+      let searchList = []
+      // 搜索
+      for (const key in bookData) {
+        // 取出第一层-分组
+        if (bookData.hasOwnProperty(key)) {
+          const element = bookData[key]
+          // console.log(key)
+          for (const key2 in element) {
+            // 取出第二层-分类
+            if (element.hasOwnProperty(key2)) {
+              const element2 = element[key2]
+              for (const key3 in element2) {
+                // 取出第三层-书名
+                const element3 = element2[key3]     
+                if (element3.title) {
+                  // 判断是否包含关键字
+                  if (element3.title.includes(searchValue) || element3.text.includes(searchValue)) {
+                    searchList.push({
+                      group: key,
+                      class: key2,
+                      name: key3,
+                      title: element3.title,
+                    })
+                    searchHtml += `<div class="search-item">${element3.title}</div>`
+                  }
+                } else {
+                  console.error(`${key3}没有标题!`)
+                }
+              }
+            }
+          }
+        }
+      }
+      // console.log(searchList)
+      document.getElementsByClassName('search-panel')[0].innerHTML = searchHtml
+    }
+  }
+</script>
+
+<style lang="less">
+.search-bar {
+  width: calc(100% + 40px);
+  height: 35px;
+  display: flex;
+  overflow: hidden;
+  margin: 10px;
+  transition: width 0.5s;
+}
+.search-panel {
+  height: 0;
+  width: calc(100% - 20px);
+  background-color: white;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 55px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 10px;
+  transition: height 0.5s;
+}
+.search-box {
+  display: flex;
+  height: 100%;
+  width: calc(100% - 60px);
+  background-color: #deb0b3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+input {
+  border: none;
+  width: calc(100% - 35px);
+  background-color: #deb0b3;
+  border-left: 1px solid white;
+  height: 25px;
+  margin: 5px 0;
+  font-size: 20px;
+  padding: 0 5px;
+  color: white;
+  border-radius: 0;
+}
+input:focus{
+  outline: none; 
+  border-left: 1px solid white;
+}
+.cancel {
+  width: 40px;
+  text-align: center;
+  line-height: 29px;
+  color: white;
+  border-bottom: 1px solid white;
+  margin: 3px 10px;
+}
+svg {
+  fill: white;
+}
+.search-item {
+  color: #6b6060;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  margin: 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</style>
