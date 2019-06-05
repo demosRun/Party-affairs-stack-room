@@ -272,6 +272,7 @@ li {
   line-height: 21px;
   height: 44px;
   margin: 3px;
+  -webkit-appearance: none;
 }
 
 [template=bottomBar] p {
@@ -328,24 +329,24 @@ li {
 }
 
 [template=three] .return {
-  position: fixed;
   top: 0;
   left: 0;
-  height: 90px;
-  line-height: 90px;
+  height: 45px;
+  line-height: 45px;
   color: white;
-  font-size: 40px;
+  font-size: 16px;
   display: block;
+  margin: 0 10px;
 }
 
-[template=three] .return .icon {
+[template=three] .return .icon,
+[template=three] .return span {
   float: left;
 }
 
 [template=three] .text {
   width: 170px;
   height: 557px;
-  background-image: url('../resource/one-text.png');
   background-position: center;
   position: absolute;
   left: 0;
@@ -356,12 +357,13 @@ li {
 }
 
 [template=three] .button {
-  width: 254px;
-  height: 77px;
+  width: 127px;
+  height: 38px;
   position: absolute;
-  bottom: 160px;
+  bottom: 10%;
   left: 0;
   right: 0;
+  background-size: 100% 100%;
   margin: 0 auto;
   background-image: url('../resource/three-button.png');
 }
@@ -369,7 +371,7 @@ li {
   color: white;
   display: flex;
   line-height: 45px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 [template=four] .return,
@@ -388,6 +390,8 @@ li {
   text-align: center;
   color: #f6f1bb;
   font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 [template=four] .content {
@@ -398,6 +402,7 @@ li {
   overflow: auto;
   font-size: 14px;
   line-height: 22px;
+  text-align: justify;
 }
 
 [template=four] .content.middle {
@@ -419,12 +424,17 @@ li {
   width: 33.33%;
   text-align: center;
   color: #e6a6a6;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 [template=four] .bootom-bar .bootom-bar-item .icon {
   display: block;
   line-height: 33px;
   font-size: 20px;
+  pointer-events: none;
 }
 
 [template=four] .bootom-bar .bootom-bar-item p {
@@ -432,6 +442,11 @@ li {
   margin: 0;
   padding: 0;
   font-size: 12px;
+  pointer-events: none;
+}
+
+[template=four] .bootom-bar .bootom-bar-item:active {
+  color: #f7c192;
 }
 
 [template=four] .font-size-box {
@@ -482,6 +497,7 @@ li {
   width: 100%;
   position: absolute;
   bottom: 0;
+  font-size: 18px;
   background-color: #c6c5c1;
 }
 

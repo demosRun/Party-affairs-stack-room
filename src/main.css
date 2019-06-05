@@ -8,7 +8,7 @@ html, body, .ox {
   -webkit-overflow-scrolling: touch;
 }
 
-.one, .three {
+.one {
   height: 1500px;
   width: 750px;
   position: relative;

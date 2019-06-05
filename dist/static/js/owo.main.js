@@ -1,5 +1,5 @@
 // build by owo frame!
-// Wed Jun 05 2019 14:55:57 GMT+0800 (GMT+08:00)
+// Wed Jun 05 2019 16:30:44 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -31,10 +31,6 @@ window.owo = {
       },
       "template": {
         "searchBar": {
-          "created": function created() {
-            // 注册输入事件
-            this.$el.getElementsByTagName('input')[0].oninput = this.inputValue;
-          },
           "cancel": function cancel() {
             // console.log(this)
             this.$el.classList.remove('search-bar-active');
@@ -47,8 +43,8 @@ window.owo = {
               _this.$el.classList.add('search-bar-active');
             }, 0);
           },
-          "inputValue": function inputValue(e) {
-            var searchValue = e.target.value;
+          "inputValue": function inputValue() {
+            var searchValue = this.$event.target.value;
 
             if (searchValue === '') {
               document.getElementsByClassName('search-panel')[0].innerHTML = '';
@@ -93,7 +89,6 @@ window.owo = {
             }, 100);
           },
           "turn": function turn(name) {
-            console.log('sd');
             var bookName = unescape(name);
             owo.global.checkBookName = bookName;
             owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName];
@@ -256,30 +251,27 @@ window.owo = {
     },
     "three": {
       "created": function created() {
-        // 获取屏幕信息
-        var screenInfo = $tool.getScreenInfo();
-        var WC = screenInfo.clientWidth / 750;
-        var HC = screenInfo.clientHeight / 1500;
-        var scale = WC > HC ? HC : WC; // console.log((screenInfo.clientWidth - 750 * scale) / 2)
-        // console.log(screenInfo.clientWidth - (750 * WC), scale)
-        // console.log(screenInfo.clientWidth * scale)
-
-        this.$el.style.transform = "scale(".concat(scale, ", ").concat(scale, ")");
-        this.$el.style.left = (screenInfo.clientWidth - 750 * scale) / 2 + 'px';
-        this.$el.style.transformOrigin = "0 0 0";
+        // 注册返回方式
+        owo.state.animation = {
+          "in": 'moveToRight',
+          "out": 'moveFromLeft'
+        };
       },
       "turn": function turn() {
+        // $go('four', 'moveToRight', 'moveFromLeft')
         $go('four', 'moveToLeft', 'moveFromRight');
       }
     },
     "four": {
-      "data": {
-        "text": "中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。"
-      },
       "created": function created() {
         var _this4 = this;
 
-        // 默认为第一张
+        // 注册返回方式
+        owo.state.animation = {
+          "in": 'moveToRight',
+          "out": 'moveFromLeft' // 默认为第一张
+
+        };
         owo.global.activeChapter = 0; // 如果选择了书籍那么取出书籍内容，如果没有返回书籍目录
 
         if (owo.global.checkBook) {
@@ -312,19 +304,32 @@ window.owo = {
       },
       "changeActiveChapter": function changeActiveChapter(activeIndex) {
         activeIndex = parseInt(activeIndex);
+        owo.global.activeChapter = activeIndex;
         var content = this.$el.getElementsByClassName('content')[0];
         content.innerText = owo.global.checkBook.content[activeIndex].text;
       },
       "showSizeBox": function showSizeBox() {
         this.hideContentsBox();
-        this.$el.getElementsByClassName('font-size-box')[0].style.display = 'block';
+        var sizeDom = this.$el.getElementsByClassName('font-size-box')[0];
+
+        if (sizeDom.style.display !== 'block') {
+          sizeDom.style.display = 'block';
+        } else {
+          this.hideSizeBox();
+        }
       },
       "hideSizeBox": function hideSizeBox() {
         this.$el.getElementsByClassName('font-size-box')[0].style.display = 'none';
       },
       "showContentsBox": function showContentsBox() {
         this.hideSizeBox();
-        this.$el.getElementsByClassName('contents-box')[0].style.height = '100%';
+        var contentsDom = this.$el.getElementsByClassName('contents-box')[0];
+
+        if (contentsDom.style.height !== '100%') {
+          contentsDom.style.height = '100%';
+        } else {
+          this.hideContentsBox();
+        }
       },
       "hideContentsBox": function hideContentsBox() {
         this.$el.getElementsByClassName('contents-box')[0].style.height = '0';
@@ -765,34 +770,121 @@ _owo.whenReady = function () {
   };
 }();
 
-_owo.whenReady(_owo.ready);
+_owo.whenReady(_owo.ready); // 页面切换效果
+// 获取URL参数
 
-function switchPage(oldUrlParam, newUrlParam) {
-  var oldPage = oldUrlParam.split('&')[0];
-  var newPage = newUrlParam.split('&')[0]; // 查找页面跳转前的page页(dom节点)
-  // console.log(oldUrlParam)
-  // 如果源地址获取不到 那么一般是因为源页面为首页
 
-  if (oldPage === undefined) {
-    oldPage = owo.entry;
-  }
+function getQueryString(newUrlParam, name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = newUrlParam.match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+} // 无特效翻页
 
-  var oldDom = document.getElementById('o-' + oldPage);
 
+function dispalyEffect(oldDom, newDom) {
   if (oldDom) {
     // 隐藏掉旧的节点
     oldDom.style.display = 'none';
   } // 查找页面跳转后的page
 
 
-  var newDom = document.getElementById('o-' + newPage); // console.log(newDom)
+  newDom.style.display = 'block';
+} // 切换页面动画
 
-  if (newDom) {
-    // 隐藏掉旧的节点
-    newDom.style.display = 'block';
+
+function animation(oldDom, newDom, animationIn, animationOut) {
+  // 获取父元素
+  var parentDom = newDom.parentElement;
+
+  if (!oldDom) {
+    console.error('旧页面不存在!');
+  }
+
+  oldDom.addEventListener("animationend", oldDomFun);
+  newDom.addEventListener("animationend", newDomFun);
+  oldDom.style.position = 'absolute';
+  newDom.style.display = 'block';
+  newDom.style.position = 'absolute'; // document.body.style.overflow = 'hidden'
+
+  parentDom.style.perspective = '1200px';
+  oldDom.classList.add('owo-animation');
+  animationIn.split(',').forEach(function (value) {
+    oldDom.classList.add('o-page-' + value);
+  });
+  newDom.classList.add('owo-animation');
+  animationOut.split(',').forEach(function (value) {
+    newDom.classList.add('o-page-' + value);
+  }); // 旧DOM执行函数
+
+  function oldDomFun() {
+    // 移除监听
+    oldDom.removeEventListener('animationend', oldDomFun, false); // 隐藏掉旧的节点
+
+    oldDom.style.display = 'none'; // console.log(oldDom)
+
+    oldDom.style.position = '';
+    oldDom.classList.remove('owo-animation');
+    parentDom.style.perspective = ''; // 清除临时设置的class
+
+    animationIn.split(',').forEach(function (value) {
+      oldDom.classList.remove('o-page-' + value);
+    });
+  } // 新DOM执行函数
+
+
+  function newDomFun() {
+    // 移除监听
+    newDom.removeEventListener('animationend', newDomFun, false); // 清除临时设置的style
+
+    newDom.style.position = '';
+    newDom.classList.remove('owo-animation');
+    animationOut.split(',').forEach(function (value) {
+      newDom.classList.remove('o-page-' + value);
+    });
+  }
+} // 切换页面前的准备工作
+
+
+function switchPage(oldUrlParam, newUrlParam) {
+  var oldPage = oldUrlParam;
+  var newPage = newUrlParam;
+  var newPagParamList = newPage.split('&');
+  if (newPage) newPage = newPagParamList[0]; // 查找页面跳转前的page页(dom节点)
+  // console.log(oldUrlParam)
+  // 如果源地址获取不到 那么一般是因为源页面为首页
+
+  if (oldPage === undefined) {
+    oldPage = owo.entry;
   } else {
+    oldPage = oldPage.split('&')[0];
+  }
+
+  var oldDom = document.getElementById('o-' + oldPage);
+  var newDom = document.getElementById('o-' + newPage);
+
+  if (!newDom) {
     console.error('页面不存在!');
     return;
+  } // 判断是否有动画效果
+
+
+  if (!owo.state.animation) owo.state.animation = {}; // 直接.in会在ie下报错
+
+  var animationIn = owo.state.animation['in'];
+  var animationOut = owo.state.animation['out'];
+
+  if (animationIn || animationOut) {
+    // 如果没用动画参数则使用默认效果
+    if (!animationIn || !animationOut) {
+      dispalyEffect(oldDom, newDom);
+      return;
+    }
+
+    owo.state.animation = {};
+    animation(oldDom, newDom, animationIn, animationOut);
+  } else {
+    dispalyEffect(oldDom, newDom);
   }
 
   window.owo.activePage = newPage; // 更改$data链接
