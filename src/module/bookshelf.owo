@@ -6,13 +6,12 @@
 <script>
   module.exports = {
     created: function () {
-      
       setTimeout(() => {
         $emit('changeBookshelf', owo.global.activeItme, owo.global.activeKey)
       }, 0)
     },
     event: {
-      changeBookshelf: function (name, activeItme, activeKey) {
+      changeBookshelf: function (activeItme, activeKey) {
         console.log(activeItme, activeKey)
         let html = ``
         const activeItem = bookData[activeItme][activeKey]
@@ -21,14 +20,20 @@
             const element = activeItem[key]
             // console.log(element)
             if (element.title) {
-              html += `<div class="book-box"> <div class="book icon">${key}</div> <div class="info"> <h4>${element.title}</h4> <p>${element.text}</p> </div> </div>`
+              html += `<div class="book-box" @click="turn()"> <div class="book icon">${key}</div> <div class="info"> <h4>${element.title}</h4> <p>${element.text}</p> </div> </div>`
             } else {
-              html += `<div class="book-box"> <div class="book icon">${key}</div> <div class="info"><p>${element.text}</p> </div> </div>`
+              html += `<div class="book-box" @click="turn()"> <div class="book icon">${key}</div> <div class="info"><p>${element.text}</p> </div> </div>`
             }
           }
         }
         this.$el.getElementsByClassName('bookshelf')[0].innerHTML = html
+        setTimeout(() => {
+          _owo.handleEvent(this.$el.getElementsByClassName('bookshelf')[0], 'bookshelf', null)
+        }, 0)
       }
+    },
+    turn: function () {
+      $go('three', 'moveToLeft', 'moveFromRight')
     }
   }
 </script>

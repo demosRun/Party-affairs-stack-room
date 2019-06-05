@@ -1,0 +1,73 @@
+<template>
+  <div class="three">
+    <a href="#two" class="return clear">
+      <div class="icon">&#xe682;</div>
+      <span>返回</span>
+    </a>
+    <div class="text"></div>
+    <div class="button" @click="turn"></div>
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      // 获取屏幕信息
+      const screenInfo = $tool.getScreenInfo()
+      
+      const WC = screenInfo.clientWidth / 750
+      const HC = screenInfo.clientHeight / 1500
+      const scale = WC > HC ? HC : WC
+      // console.log((screenInfo.clientWidth - 750 * scale) / 2)
+      // console.log(screenInfo.clientWidth - (750 * WC), scale)
+      // console.log(screenInfo.clientWidth * scale)
+      this.$el.style.transform = `scale(${scale}, ${scale})`
+      this.$el.style.left = ((screenInfo.clientWidth - 750 * scale) / 2) + 'px'
+      this.$el.style.transformOrigin = `0 0 0`
+    },
+    turn: function () {
+      $go('four', 'moveToLeft', 'moveFromRight')
+    }
+  }
+</script>
+
+<style lang="less">
+.one {
+  background-color: #c82923;
+}
+.return {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 90px;
+  line-height: 90px;
+  color: white;
+  font-size: 40px;
+  display: block;
+  .icon {
+    float: left;
+  }
+}
+.text {
+  width: 170px;
+  height: 557px;
+  background-image: url('@&one-text.png&');
+  background-position: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.button {
+  width: 254px;
+  height: 77px;
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url('@&three-button.png&');
+}
+</style>

@@ -1,5 +1,5 @@
 // build by owo frame!
-// Tue Jun 04 2019 16:18:47 GMT+0800 (GMT+08:00)
+// Wed Jun 05 2019 10:50:51 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -168,7 +168,9 @@ window.owo = {
             }, 0);
           },
           "event": {
-            "changeBookshelf": function changeBookshelf(name, activeItme, activeKey) {
+            "changeBookshelf": function changeBookshelf(activeItme, activeKey) {
+              var _this3 = this;
+
               console.log(activeItme, activeKey);
               var html = "";
               var activeItem = bookData[activeItme][activeKey];
@@ -178,24 +180,30 @@ window.owo = {
                   var element = activeItem[key]; // console.log(element)
 
                   if (element.title) {
-                    html += "<div class=\"book-box\"> <div class=\"book icon\">".concat(key, "</div> <div class=\"info\"> <h4>").concat(element.title, "</h4> <p>").concat(element.text, "</p> </div> </div>");
+                    html += "<div class=\"book-box\" @click=\"turn()\"> <div class=\"book icon\">".concat(key, "</div> <div class=\"info\"> <h4>").concat(element.title, "</h4> <p>").concat(element.text, "</p> </div> </div>");
                   } else {
-                    html += "<div class=\"book-box\"> <div class=\"book icon\">".concat(key, "</div> <div class=\"info\"><p>").concat(element.text, "</p> </div> </div>");
+                    html += "<div class=\"book-box\" @click=\"turn()\"> <div class=\"book icon\">".concat(key, "</div> <div class=\"info\"><p>").concat(element.text, "</p> </div> </div>");
                   }
                 }
               }
 
               this.$el.getElementsByClassName('bookshelf')[0].innerHTML = html;
+              setTimeout(function () {
+                _owo.handleEvent(_this3.$el.getElementsByClassName('bookshelf')[0], 'bookshelf', null);
+              }, 0);
             }
+          },
+          "turn": function turn() {
+            $go('three', 'moveToLeft', 'moveFromRight');
           },
           "prop": {}
         },
         "bottomBar": {
           "created": function created() {
-            var _this3 = this;
+            var _this4 = this;
 
             setTimeout(function () {
-              _this3.$el.getElementsByTagName('li')[0].classList.add('active');
+              _this4.$el.getElementsByTagName('li')[0].classList.add('active');
             }, 0);
           },
           "changeItem": function changeItem(item) {
@@ -234,6 +242,44 @@ window.owo = {
           "prop": {}
         }
       }
+    },
+    "three": {
+      "created": function created() {
+        // 获取屏幕信息
+        var screenInfo = $tool.getScreenInfo();
+        var WC = screenInfo.clientWidth / 750;
+        var HC = screenInfo.clientHeight / 1500;
+        var scale = WC > HC ? HC : WC; // console.log((screenInfo.clientWidth - 750 * scale) / 2)
+        // console.log(screenInfo.clientWidth - (750 * WC), scale)
+        // console.log(screenInfo.clientWidth * scale)
+
+        this.$el.style.transform = "scale(".concat(scale, ", ").concat(scale, ")");
+        this.$el.style.left = (screenInfo.clientWidth - 750 * scale) / 2 + 'px';
+        this.$el.style.transformOrigin = "0 0 0";
+      },
+      "turn": function turn() {
+        $go('four', 'moveToLeft', 'moveFromRight');
+      }
+    },
+    "four": {
+      "data": {
+        "text": "中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。"
+      },
+      "created": function created() {},
+      "showSizeBox": function showSizeBox() {
+        this.$el.getElementsByClassName('font-size-box')[0].style.display = 'block';
+      },
+      "hideSizeBox": function hideSizeBox() {
+        this.$el.getElementsByClassName('font-size-box')[0].style.display = 'none';
+      },
+      "changeSize": function changeSize(mode) {
+        var content = this.$el.getElementsByClassName('content')[0]; // 清除所有原属性
+
+        content.classList.remove('small');
+        content.classList.remove('middle');
+        content.classList.remove('large');
+        content.classList.add(mode);
+      }
     }
   },
   // 页面默认入口
@@ -257,14 +303,19 @@ owo.global = {}; // 全局方法变量
 owo.tool = {}; // 事件推送方法
 
 var $emit = function $emit(eventName) {
-  var _arguments = arguments;
   var event = owo.state.event[eventName];
+  var argumentsList = [];
+
+  for (var ind = 1; ind < arguments.length; ind++) {
+    argumentsList.push(arguments[ind]);
+  }
+
   event.forEach(function (element) {
     // 注入运行环境运行
     element.fun.apply(_owo.assign(element.script, {
       $el: element.dom,
       activePage: window.owo.activePage
-    }), _arguments);
+    }), argumentsList);
   });
 }; // 便捷的获取工具方法
 
@@ -407,10 +458,10 @@ _owo.handleEvent = function (tempDom, templateName, entryDom) {
 
           default:
             {
-              // 处理事件
+              // 处理事件 使用bind防止闭包
               tempDom["on" + eventName] = function (event) {
                 // 因为后面会对eventFor进行修改所以使用拷贝的
-                var eventForCopy = eventFor; // 判断页面是否有自己的方法
+                var eventForCopy = this; // 判断页面是否有自己的方法
 
                 var newPageFunction = window.owo.script[window.owo.activePage]; // console.log(this.attributes)
 
@@ -418,9 +469,6 @@ _owo.handleEvent = function (tempDom, templateName, entryDom) {
                   // 如果模板注册到newPageFunction中，那么证明模板没有script那么直接使用eval执行
                   if (newPageFunction.template) {
                     newPageFunction = newPageFunction.template[templateName];
-                  } else {
-                    eval(eventForCopy);
-                    return;
                   }
                 } // 待优化可以单独提出来
                 // 取出参数
@@ -466,7 +514,7 @@ _owo.handleEvent = function (tempDom, templateName, entryDom) {
                   // 如果没有此方法则交给浏览器引擎尝试运行
                   eval(eventForCopy);
                 }
-              };
+              }.bind(eventFor);
             }
         }
       }

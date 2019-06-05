@@ -323,3 +323,146 @@ li {
   margin: 0 auto;
   background-image: url('../resource/one-button.png');
 }
+[template=three] .one {
+  background-color: #c82923;
+}
+
+[template=three] .return {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 90px;
+  line-height: 90px;
+  color: white;
+  font-size: 40px;
+  display: block;
+}
+
+[template=three] .return .icon {
+  float: left;
+}
+
+[template=three] .text {
+  width: 170px;
+  height: 557px;
+  background-image: url('../resource/one-text.png');
+  background-position: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+[template=three] .button {
+  width: 254px;
+  height: 77px;
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url('../resource/three-button.png');
+}
+[template=four] .top-bar {
+  color: white;
+  display: flex;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+[template=four] .return,
+[template=four] .next {
+  width: 70px;
+  margin: 0 10px;
+  color: white;
+}
+
+[template=four] .next {
+  text-align: right;
+}
+
+[template=four] .title {
+  width: calc(100% - 180px);
+  text-align: center;
+  color: #f6f1bb;
+  font-size: 16px;
+}
+
+[template=four] .content {
+  background-color: white;
+  height: calc(100% - 130px);
+  margin: 0;
+  padding: 20px;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+[template=four] .content.middle {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+[template=four] .content.large {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+[template=four] .bootom-bar {
+  height: 50px;
+  display: flex;
+}
+
+[template=four] .bootom-bar .bootom-bar-item {
+  width: 33.33%;
+  text-align: center;
+  color: #e6a6a6;
+}
+
+[template=four] .bootom-bar .bootom-bar-item .icon {
+  display: block;
+  line-height: 33px;
+  font-size: 20px;
+}
+
+[template=four] .bootom-bar .bootom-bar-item p {
+  line-height: 15px;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+[template=four] .font-size-box {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 90px);
+  left: 0;
+  top: 40px;
+  display: none;
+}
+
+[template=four] .font-size-box .font-size {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  background-color: #c6c5c1;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+[template=four] .font-size-box .item {
+  width: 33.33%;
+  text-align: center;
+  color: #383030;
+}
+
+[template=four] .font-size-box .middle {
+  font-size: 22px;
+}
+
+[template=four] .font-size-box .large {
+  font-size: 28px;
+}

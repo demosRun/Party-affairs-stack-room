@@ -52,6 +52,49 @@
       </li>
     </ul>
   </div>
+  <div class="three ox" template="three" id="o-three" style="display: none;">
+    <a href="#two" class="return clear">
+      <div class="icon"></div>
+      <span>返回</span>
+    </a>
+    <div class="text"></div>
+    <div class="button" @click="turn"></div>
+  </div>
+  <div class="four ox" template="four" id="o-four" style="display: none;">
+    <div class="top-bar">
+      <a class="return" href="#three">
+        <div class="icon"></div>
+        <span class="text">返回</span>
+      </a>
+      <div class="title">中国共产党党章</div>
+      <div class="next">
+        <span class="text">下一章</span>
+        <div class="icon"></div>
+      </div>
+    </div>
+    <div class="content">中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。</div>
+    <div class="bootom-bar">
+      <div class="bootom-bar-item" @click="showSizeBox">
+        <div class="icon"></div>
+        <p>字号</p>
+      </div>
+      <div class="bootom-bar-item">
+        <div class="icon"></div>
+        <p>目录</p>
+      </div>
+      <div class="bootom-bar-item">
+        <div class="icon"></div>
+        <p>分享</p>
+      </div>
+    </div>
+    <div class="font-size-box" @click="hideSizeBox">
+      <div class="font-size">
+        <div class="small item" @click="changeSize('small')">小</div>
+        <div class="middle item" @click="changeSize('middle')">中</div>
+        <div class="large item" @click="changeSize('large')">大</div>
+      </div>
+    </div>
+  </div>
   <!-- 框架script文件 -->
   <script src="./static/js/owo.main.js" type="text/javascript" charset="UTF-8"></script>
   <!-- 调试-热刷新代码 -->
