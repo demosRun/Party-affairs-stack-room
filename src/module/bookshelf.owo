@@ -14,17 +14,26 @@
       changeBookshelf: function (activeItme, activeKey) {
         console.log(activeItme, activeKey)
         let html = ``
+        if (!bookData[activeItme]) {
+          $tool.toast('此分类下暂时还没有分类!')
+          this.$el.getElementsByClassName('bookshelf')[0].innerHTML = ''
+          return
+        }
         const activeItem = bookData[activeItme][activeKey]
+
         for (const key in activeItem) {
           if (activeItem.hasOwnProperty(key)) {
             const element = activeItem[key]
             // console.log(element)
             if (element.title) {
-              html += `<div class="book-box" @click="turn()"> <div class="book icon">${key}</div> <div class="info"> <h4>${element.title}</h4> <p>${element.text}</p> </div> </div>`
+              html += `<div class="book-box" @click="turn(${escape(key)})"> <div class="book icon">${key}</div> <div class="info"> <h4>${element.title}</h4> <p>${element.summary}</p> </div> </div>`
             } else {
-              html += `<div class="book-box" @click="turn()"> <div class="book icon">${key}</div> <div class="info"><p>${element.text}</p> </div> </div>`
+              html += `<div class="book-box" @click="turn(${escape(key)})"> <div class="book icon">${key}</div> <div class="info"><p>${element.summary}</p> </div> </div>`
             }
           }
+        }
+        if (html === '') {
+          $tool.toast('此目录下暂时还没有内容!')
         }
         this.$el.getElementsByClassName('bookshelf')[0].innerHTML = html
         setTimeout(() => {
@@ -32,7 +41,10 @@
         }, 0)
       }
     },
-    turn: function () {
+    turn: function (name) {
+      const bookName = unescape(name)
+      owo.global.checkBookName = bookName
+      owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName]
       $go('three', 'moveToLeft', 'moveFromRight')
     }
   }

@@ -37,7 +37,6 @@
         return
       }
       let searchHtml = ``
-      let searchList = []
       // 搜索
       for (const key in bookData) {
         // 取出第一层-分组
@@ -50,17 +49,11 @@
               const element2 = element[key2]
               for (const key3 in element2) {
                 // 取出第三层-书名
-                const element3 = element2[key3]     
+                const element3 = element2[key3]
                 if (element3.title) {
                   // 判断是否包含关键字
-                  if (element3.title.includes(searchValue) || element3.text.includes(searchValue)) {
-                    searchList.push({
-                      group: key,
-                      class: key2,
-                      name: key3,
-                      title: element3.title,
-                    })
-                    searchHtml += `<div class="search-item">${element3.title}</div>`
+                  if (element3.title.includes(searchValue) || element3.summary.includes(searchValue)) {
+                    searchHtml += `<div class="search-item" @click="turn('${escape(key3)}')">${element3.title}</div>`
                   }
                 } else {
                   console.error(`${key3}没有标题!`)
@@ -71,7 +64,18 @@
         }
       }
       // console.log(searchList)
-      document.getElementsByClassName('search-panel')[0].innerHTML = searchHtml
+      const searchPanel = document.getElementsByClassName('search-panel')[0]
+      searchPanel.innerHTML = searchHtml
+      setTimeout(() => {
+        _owo.handleEvent(searchPanel, 'searchBar', null)
+      }, 100)
+    },
+    turn: function (name) {
+      console.log('sd')
+      const bookName = unescape(name)
+      owo.global.checkBookName = bookName
+      owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName]
+      $go('three', 'moveToLeft', 'moveFromRight')
     }
   }
 </script>

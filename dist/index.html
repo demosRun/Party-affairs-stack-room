@@ -38,7 +38,7 @@
       <div class="bookshelf"></div>
     </div>
     <ul class="bottom-tab" template="bottomBar">
-      <li @click="changeItem('党章党规')">
+      <li class="active" @click="changeItem('党章党规')">
         <div class="icon"></div>
         <p>党章党规</p>
       </li>
@@ -67,7 +67,7 @@
         <span class="text">返回</span>
       </a>
       <div class="title">中国共产党党章</div>
-      <div class="next">
+      <div class="next" @click="next">
         <span class="text">下一章</span>
         <div class="icon"></div>
       </div>
@@ -78,7 +78,7 @@
         <div class="icon"></div>
         <p>字号</p>
       </div>
-      <div class="bootom-bar-item">
+      <div class="bootom-bar-item" @click="showContentsBox">
         <div class="icon"></div>
         <p>目录</p>
       </div>
@@ -92,6 +92,15 @@
         <div class="small item" @click="changeSize('small')">小</div>
         <div class="middle item" @click="changeSize('middle')">中</div>
         <div class="large item" @click="changeSize('large')">大</div>
+      </div>
+    </div>
+    <div class="contents-box" @click="hideContentsBox">
+      <div class="contents">
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
       </div>
     </div>
   </div>

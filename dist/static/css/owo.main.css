@@ -368,7 +368,7 @@ li {
 [template=four] .top-bar {
   color: white;
   display: flex;
-  line-height: 40px;
+  line-height: 45px;
   font-size: 14px;
 }
 
@@ -392,7 +392,7 @@ li {
 
 [template=four] .content {
   background-color: white;
-  height: calc(100% - 130px);
+  height: calc(100% - 136px);
   margin: 0;
   padding: 20px;
   overflow: auto;
@@ -465,4 +465,31 @@ li {
 
 [template=four] .font-size-box .large {
   font-size: 28px;
+}
+
+[template=four] .contents-box {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 50px;
+  transition: height 0.5s;
+  overflow: hidden;
+}
+
+[template=four] .contents-box .contents {
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #c6c5c1;
+}
+
+[template=four] .contents-box .item {
+  padding: 0;
+  margin: 0;
+  line-height: 40px;
+  padding: 0 15px;
+  color: #191917;
+  border-bottom: 1px solid #b1a9a9;
 }

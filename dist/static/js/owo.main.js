@@ -1,5 +1,5 @@
 // build by owo frame!
-// Wed Jun 05 2019 10:50:51 GMT+0800 (GMT+08:00)
+// Wed Jun 05 2019 14:55:57 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -55,8 +55,7 @@ window.owo = {
               return;
             }
 
-            var searchHtml = "";
-            var searchList = []; // 搜索
+            var searchHtml = ""; // 搜索
 
             for (var key in bookData) {
               // 取出第一层-分组
@@ -74,14 +73,8 @@ window.owo = {
 
                       if (element3.title) {
                         // 判断是否包含关键字
-                        if (element3.title.includes(searchValue) || element3.text.includes(searchValue)) {
-                          searchList.push({
-                            group: key,
-                            "class": key2,
-                            name: key3,
-                            title: element3.title
-                          });
-                          searchHtml += "<div class=\"search-item\">".concat(element3.title, "</div>");
+                        if (element3.title.includes(searchValue) || element3.summary.includes(searchValue)) {
+                          searchHtml += "<div class=\"search-item\" @click=\"turn('".concat(escape(key3), "')\">").concat(element3.title, "</div>");
                         }
                       } else {
                         console.error("".concat(key3, "\u6CA1\u6709\u6807\u9898!"));
@@ -93,7 +86,18 @@ window.owo = {
             } // console.log(searchList)
 
 
-            document.getElementsByClassName('search-panel')[0].innerHTML = searchHtml;
+            var searchPanel = document.getElementsByClassName('search-panel')[0];
+            searchPanel.innerHTML = searchHtml;
+            setTimeout(function () {
+              _owo.handleEvent(searchPanel, 'searchBar', null);
+            }, 100);
+          },
+          "turn": function turn(name) {
+            console.log('sd');
+            var bookName = unescape(name);
+            owo.global.checkBookName = bookName;
+            owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName];
+            $go('three', 'moveToLeft', 'moveFromRight');
           },
           "prop": {}
         },
@@ -173,6 +177,13 @@ window.owo = {
 
               console.log(activeItme, activeKey);
               var html = "";
+
+              if (!bookData[activeItme]) {
+                $tool.toast('此分类下暂时还没有分类!');
+                this.$el.getElementsByClassName('bookshelf')[0].innerHTML = '';
+                return;
+              }
+
               var activeItem = bookData[activeItme][activeKey];
 
               for (var key in activeItem) {
@@ -180,11 +191,15 @@ window.owo = {
                   var element = activeItem[key]; // console.log(element)
 
                   if (element.title) {
-                    html += "<div class=\"book-box\" @click=\"turn()\"> <div class=\"book icon\">".concat(key, "</div> <div class=\"info\"> <h4>").concat(element.title, "</h4> <p>").concat(element.text, "</p> </div> </div>");
+                    html += "<div class=\"book-box\" @click=\"turn(".concat(escape(key), ")\"> <div class=\"book icon\">").concat(key, "</div> <div class=\"info\"> <h4>").concat(element.title, "</h4> <p>").concat(element.summary, "</p> </div> </div>");
                   } else {
-                    html += "<div class=\"book-box\" @click=\"turn()\"> <div class=\"book icon\">".concat(key, "</div> <div class=\"info\"><p>").concat(element.text, "</p> </div> </div>");
+                    html += "<div class=\"book-box\" @click=\"turn(".concat(escape(key), ")\"> <div class=\"book icon\">").concat(key, "</div> <div class=\"info\"><p>").concat(element.summary, "</p> </div> </div>");
                   }
                 }
+              }
+
+              if (html === '') {
+                $tool.toast('此目录下暂时还没有内容!');
               }
 
               this.$el.getElementsByClassName('bookshelf')[0].innerHTML = html;
@@ -193,19 +208,15 @@ window.owo = {
               }, 0);
             }
           },
-          "turn": function turn() {
+          "turn": function turn(name) {
+            var bookName = unescape(name);
+            owo.global.checkBookName = bookName;
+            owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName];
             $go('three', 'moveToLeft', 'moveFromRight');
           },
           "prop": {}
         },
         "bottomBar": {
-          "created": function created() {
-            var _this4 = this;
-
-            setTimeout(function () {
-              _this4.$el.getElementsByTagName('li')[0].classList.add('active');
-            }, 0);
-          },
           "changeItem": function changeItem(item) {
             var domList = this.$el.getElementsByTagName('li');
             var _iteratorNormalCompletion2 = true;
@@ -265,12 +276,58 @@ window.owo = {
       "data": {
         "text": "中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。"
       },
-      "created": function created() {},
+      "created": function created() {
+        var _this4 = this;
+
+        // 默认为第一张
+        owo.global.activeChapter = 0; // 如果选择了书籍那么取出书籍内容，如果没有返回书籍目录
+
+        if (owo.global.checkBook) {
+          // 如果第一章都没有内容那么就返回选择列表
+          if (owo.global.checkBook.content && owo.global.checkBook.content[0]) {
+            this.changeActiveChapter(owo.global.activeChapter); // 更新章节信息
+
+            var contentsHtml = '';
+
+            for (var ind in owo.global.checkBook.content) {
+              if (owo.global.checkBook.content.hasOwnProperty(ind)) {
+                var element = owo.global.checkBook.content[ind];
+                contentsHtml += "<p class=\"item\" @click=\"changeActiveChapter(".concat(ind, ")\">").concat(parseInt(ind) + 1, ".&nbsp;&nbsp;&nbsp;").concat(element.name, "</p>");
+              }
+            }
+
+            var contentsDom = this.$el.getElementsByClassName('contents')[0];
+            contentsDom.innerHTML = contentsHtml; // 更新dom
+
+            setTimeout(function () {
+              _owo.handleEvent(contentsDom, null, _this4.$el);
+            }, 0);
+          } else {
+            $tool.toast('本书暂时还没有内容哦!');
+            $go('two', 'moveToLeft', 'moveFromRight');
+          }
+        } else {
+          $go('two', 'moveToLeft', 'moveFromRight');
+        }
+      },
+      "changeActiveChapter": function changeActiveChapter(activeIndex) {
+        activeIndex = parseInt(activeIndex);
+        var content = this.$el.getElementsByClassName('content')[0];
+        content.innerText = owo.global.checkBook.content[activeIndex].text;
+      },
       "showSizeBox": function showSizeBox() {
+        this.hideContentsBox();
         this.$el.getElementsByClassName('font-size-box')[0].style.display = 'block';
       },
       "hideSizeBox": function hideSizeBox() {
         this.$el.getElementsByClassName('font-size-box')[0].style.display = 'none';
+      },
+      "showContentsBox": function showContentsBox() {
+        this.hideSizeBox();
+        this.$el.getElementsByClassName('contents-box')[0].style.height = '100%';
+      },
+      "hideContentsBox": function hideContentsBox() {
+        this.$el.getElementsByClassName('contents-box')[0].style.height = '0';
       },
       "changeSize": function changeSize(mode) {
         var content = this.$el.getElementsByClassName('content')[0]; // 清除所有原属性
@@ -279,6 +336,14 @@ window.owo = {
         content.classList.remove('middle');
         content.classList.remove('large');
         content.classList.add(mode);
+      },
+      "next": function next() {
+        if (owo.global.checkBook.content[owo.global.activeChapter + 1]) {
+          owo.global.activeChapter++;
+          this.changeActiveChapter(owo.global.activeChapter);
+        } else {
+          $tool.toast('已经是最后一章了!');
+        }
       }
     }
   },
@@ -751,4 +816,53 @@ owo.tool.getScreenInfo = function () {
     // 缩放比例
     devicePixelRatio: window.devicePixelRatio || 1
   };
+};
+/**
+* 显示toast提示 不支持ie8
+* @param  {number} text       显示的文字
+* @param  {number} time       显示时长
+*/
+
+
+owo.tool.toast = function (text, time) {
+  if (window.owo.state.toastClock) {
+    clearTimeout(window.owo.state.toastClock);
+    hideToast();
+  }
+
+  if (time === undefined || time === null) {
+    // 默认2秒
+    time = 2000;
+  }
+
+  var toast = document.createElement("div");
+  toast.setAttribute("id", "toast");
+  toast.setAttribute("class", "toast"); // 设置样式
+
+  toast.style.position = 'fixed';
+  toast.style.zIndex = 999;
+  toast.style['background-color'] = 'rgba(0, 0, 0, 0.5)';
+  toast.style.bottom = '10%';
+  toast.style.height = '40px';
+  toast.style.borderRadius = '10px';
+  toast.style.left = 0;
+  toast.style.right = 0;
+  toast.style.margin = 'auto';
+  toast.style.lineHeight = '40px';
+  toast.style.textAlign = 'center';
+  toast.style.color = 'white';
+  toast.style.maxWidth = '200px';
+  toast.style.padding = '0 10px';
+  toast.style.overflow = 'hidden';
+  toast.style.textOverflow = 'ellipsis';
+  toast.style.whiteSpace = 'nowrap';
+  toast.innerHTML = text;
+  document.body.appendChild(toast);
+
+  function hideToast() {
+    document.getElementById('toast').outerHTML = '';
+    window.owo.state.toastClock = null;
+  }
+
+  window.owo.state.toastClock = setTimeout(hideToast, time);
 };

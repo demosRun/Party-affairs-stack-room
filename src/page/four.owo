@@ -6,7 +6,7 @@
       .icon &#xe682;
       span.text 返回
     .title 中国共产党党章
-    .next
+    .next(@click="next")
       span.text 下一章
       .icon &#xe632;
   //- 内容区域
@@ -16,17 +16,26 @@
     .bootom-bar-item(@click="showSizeBox")
       .icon &#xe623;
       p 字号
-    .bootom-bar-item
+    .bootom-bar-item(@click="showContentsBox")
       .icon &#xe60e;
       p 目录
     .bootom-bar-item
       .icon &#xe60f;
       p 分享
+  //- 字体大小选择条
   .font-size-box(@click="hideSizeBox")
     .font-size
       .small.item(@click="changeSize('small')") 小
       .middle.item(@click="changeSize('middle')") 中
       .large.item(@click="changeSize('large')") 大
+  //- 章节选择
+  .contents-box(@click="hideContentsBox")
+    .contents
+      p.item 过去五年的工作和历史性变革4
+      p.item 过去五年的工作和历史性变革4
+      p.item 过去五年的工作和历史性变革4
+      p.item 过去五年的工作和历史性变革4
+      p.item 过去五年的工作和历史性变革4
 </template>
 
 <script>
@@ -35,12 +44,53 @@
       text: `中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。`
     },
     created: function () {
+      // 默认为第一张
+      owo.global.activeChapter = 0
+      // 如果选择了书籍那么取出书籍内容，如果没有返回书籍目录
+      if (owo.global.checkBook) {
+        // 如果第一章都没有内容那么就返回选择列表
+        if (owo.global.checkBook.content && owo.global.checkBook.content[0]) {
+          this.changeActiveChapter(owo.global.activeChapter)
+          // 更新章节信息
+          let contentsHtml = ''
+          for (const ind in  owo.global.checkBook.content) {
+            if ( owo.global.checkBook.content.hasOwnProperty(ind)) {
+              const element =  owo.global.checkBook.content[ind]
+              contentsHtml += `<p class="item" @click="changeActiveChapter(${ind})">${parseInt(ind) + 1}.&nbsp;&nbsp;&nbsp;${element.name}</p>`
+            }
+          }
+          const contentsDom = this.$el.getElementsByClassName('contents')[0]
+          contentsDom.innerHTML = contentsHtml
+          // 更新dom
+          setTimeout(() => {
+            _owo.handleEvent(contentsDom, null, this.$el)
+          }, 0)
+        } else {
+          $tool.toast('本书暂时还没有内容哦!')
+          $go('two', 'moveToLeft', 'moveFromRight')
+        }
+      } else {
+        $go('two', 'moveToLeft', 'moveFromRight')
+      }
+    },
+    changeActiveChapter: function (activeIndex) {
+      activeIndex = parseInt(activeIndex)
+      const content = this.$el.getElementsByClassName('content')[0]
+      content.innerText = owo.global.checkBook.content[activeIndex].text
     },
     showSizeBox: function () {
+      this.hideContentsBox()
       this.$el.getElementsByClassName('font-size-box')[0].style.display = 'block'
     },
     hideSizeBox: function () {
       this.$el.getElementsByClassName('font-size-box')[0].style.display = 'none'
+    },
+    showContentsBox: function () {
+      this.hideSizeBox()
+      this.$el.getElementsByClassName('contents-box')[0].style.height = '100%'
+    },
+    hideContentsBox: function () {
+      this.$el.getElementsByClassName('contents-box')[0].style.height = '0'
     },
     changeSize: function (mode) {
       const content = this.$el.getElementsByClassName('content')[0]
@@ -49,6 +99,14 @@
       content.classList.remove('middle')
       content.classList.remove('large')
       content.classList.add(mode)
+    },
+    next: function () {
+      if (owo.global.checkBook.content[owo.global.activeChapter + 1]) {
+        owo.global.activeChapter ++
+        this.changeActiveChapter(owo.global.activeChapter)
+      } else {
+        $tool.toast('已经是最后一章了!')
+      }
     }
   }
 </script>
@@ -57,7 +115,7 @@
 .top-bar {
   color: white;
   display: flex;
-  line-height: 40px;
+  line-height: 45px;
   font-size: 14px;
 }
 .return, .next {
@@ -76,7 +134,7 @@
 }
 .content {
   background-color: white;
-  height: calc(100% - 130px);
+  height: calc(100% - 136px);
   margin: 0;
   padding: 20px;
   overflow: auto;
@@ -138,6 +196,30 @@
   }
   .large {
     font-size: 28px;
+  }
+}
+.contents-box {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 50px;
+  transition: height 0.5s;
+  overflow: hidden;
+  .contents {
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #c6c5c1;
+  }
+  .item {
+    padding: 0;
+    margin: 0;
+    line-height: 40px;
+    padding: 0 15px;
+    color: #191917;
+    border-bottom: 1px solid #b1a9a9;
   }
 }
 </style>
