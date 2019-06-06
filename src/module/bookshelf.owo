@@ -12,7 +12,7 @@
     },
     event: {
       changeBookshelf: function (activeItme, activeKey) {
-        console.log(activeItme, activeKey)
+        // console.log(activeItme, activeKey)
         let html = ``
         if (!bookData[activeItme]) {
           $tool.toast('此分类下暂时还没有分类!')
@@ -26,9 +26,9 @@
             const element = activeItem[key]
             // console.log(element)
             if (element.title) {
-              html += `<div class="book-box" @click="turn(${escape(key)})"> <div class="book icon">${key}</div> <div class="info"> <h4>${element.title}</h4> <p>${element.summary}</p> </div> </div>`
+              html += `<div class="book-box" @click="turn(${escape(key)})"> <div class="book icon" style="font-size: ${element.fontSize ? element.fontSize : '18px'};line-height: ${element.lineHeight ? element.lineHeight : '25px'};">${key}</div> <div class="info"> <h4>${element.title}</h4> <p>${element.summary}</p> </div> </div>`
             } else {
-              html += `<div class="book-box" @click="turn(${escape(key)})"> <div class="book icon">${key}</div> <div class="info"><p>${element.summary}</p> </div> </div>`
+              html += `<div class="book-box" @click="turn(${escape(key)})"> <div class="book icon" style="font-size: ${element.fontSize ? element.fontSize : '18px'};line-height: ${element.lineHeight ? element.lineHeight : '25px'};">${key}</div> <div class="info"><p>${element.summary}</p> </div> </div>`
             }
           }
         }

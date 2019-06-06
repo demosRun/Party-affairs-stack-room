@@ -51,4 +51,8 @@
   margin: 0 auto;
   background-image: url('@&one-button.png&');
 }
+hh {
+  display: block;
+  height: 10px;
+}
 </style>

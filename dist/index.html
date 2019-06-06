@@ -7,10 +7,10 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
   <!-- 页面主样式文件 -->
-  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.main.css">
+  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.main.5qs3kn2dz5l.css">
   <!-- 附属css文件 -->
   <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-  <link rel="stylesheet" href="./static/css/owo.animation.css">
+  <link rel="stylesheet" href="./static/css/owo.animation.5qs3kn2dz5l.css">
 </head>
 
 <body>
@@ -23,14 +23,19 @@
   <div class="two ox" template="two" id="o-two" style="display: none;">
     <div class="search-bar" template="searchBar">
       <div class="search-box">
-        <div class="icon-box">
-          <svg t="1559538420726" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2384" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px">
-            <path d="M740.2496 696.183467l106.5984 105.745066-44.919467 43.690667-105.984-105.130667A339.968 339.968 0 0 1 477.866667 819.2C289.348267 819.2 136.533333 666.385067 136.533333 477.866667S289.348267 136.533333 477.866667 136.533333s341.333333 152.814933 341.333333 341.333334a339.968 339.968 0 0 1-78.9504 218.3168zM477.866667 750.933333a273.066667 273.066667 0 1 0 0-546.133333 273.066667 273.066667 0 0 0 0 546.133333z" p-id="2385"></path>
-          </svg>
+        <div class="search">
+          <div class="icon-box">
+            <svg t="1559538420726" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2384" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px">
+              <path d="M740.2496 696.183467l106.5984 105.745066-44.919467 43.690667-105.984-105.130667A339.968 339.968 0 0 1 477.866667 819.2C289.348267 819.2 136.533333 666.385067 136.533333 477.866667S289.348267 136.533333 477.866667 136.533333s341.333333 152.814933 341.333333 341.333334a339.968 339.968 0 0 1-78.9504 218.3168zM477.866667 750.933333a273.066667 273.066667 0 1 0 0-546.133333 273.066667 273.066667 0 0 0 0 546.133333z" p-id="2385"></path>
+            </svg>
+          </div>
+          <input type="text" @input="inputValue" @focus="focus">
         </div>
-        <input type="text" @input="inputValue" @focus="focus">
+        <div class="logo-text"></div>
       </div>
-      <div class="search-panel"></div>
+      <div class="search-panel">
+        <div class="info-text">在上方输入框内键入关键字以搜索</div>
+      </div>
       <div class="cancel" @click="cancel">取消</div>
     </div>
     <ul class="top-tab" template="topTab"></ul>
@@ -57,15 +62,15 @@
       <div class="icon"></div>
       <span>返回</span>
     </a>
-    <div class="text"></div>
+    <div class="text icon"></div>
     <div class="button" @click="turn"></div>
   </div>
   <div class="four ox" template="four" id="o-four" style="display: none;">
     <div class="top-bar">
-      <a class="return" href="#three">
+      <div class="return" @click="last">
         <div class="icon"></div>
-        <span class="text">返回</span>
-      </a>
+        <span class="text">上一章</span>
+      </div>
       <div class="title">中国共产党党章</div>
       <div class="next" @click="next">
         <span class="text">下一章</span>
@@ -82,7 +87,7 @@
         <div class="icon"></div>
         <p>目录</p>
       </div>
-      <div class="bootom-bar-item">
+      <div class="bootom-bar-item" @click="showShareBox">
         <div class="icon"></div>
         <p>分享</p>
       </div>
@@ -103,11 +108,10 @@
         <p class="item">过去五年的工作和历史性变革4</p>
       </div>
     </div>
+    <div class="share-box" @click="hideShareBox"></div>
   </div>
   <!-- 框架script文件 -->
-  <script src="./static/js/owo.main.js" type="text/javascript" charset="UTF-8"></script>
-  <!-- 调试-热刷新代码 -->
-  <script src="./static/js/autoReload.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/owo.main.5qs3kn2dz5l.js" type="text/javascript" charset="UTF-8"></script>
   <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
   <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
 </body>

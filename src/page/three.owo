@@ -4,7 +4,7 @@
       <div class="icon">&#xe682;</div>
       <span>返回</span>
     </a>
-    <div class="text"></div>
+    <div class="text icon"></div>
     <div class="button" @click="turn"></div>
   </div>
 </template>
@@ -17,6 +17,16 @@
         "in": 'moveToRight',
         "out": 'moveFromLeft'
       }
+      const textDom = this.$el.getElementsByClassName('text')[0]
+      if (owo.global.checkBook) {
+        textDom.style.fontSize = owo.global.checkBook.bookFontSize ? owo.global.checkBook.bookFontSize : '42px'
+        textDom.style.lineHeight = owo.global.checkBook.lineHeight ? owo.global.checkBook.bookLineHeight : '50px'
+        textDom.innerHTML = owo.global.checkBookName
+      } else {
+        $tool.toast('本书暂时还没有内容哦!')
+        $go('two', 'moveToRight', 'moveFromLeft')
+      }
+      
     },
     turn: function () {
       // $go('four', 'moveToRight', 'moveFromLeft')
@@ -43,15 +53,23 @@
   }
 }
 .text {
-  width: 170px;
-  height: 557px;
+  width: 100%;
+  height: 80%;
   background-position: center;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
+  right: 5%;
+  top: 20%;
   bottom: 0;
+  padding-top: 10%;
+  font-size: 42px;
+  color: #f3b559;
+  background-size: 80%;
+  background-repeat: no-repeat;
   margin: auto;
+  text-align: center;
+  background-position-y: 0;
+  background-position-x: 71%;
+  background-image: url('@&book-really.png&');
 }
 .button {
   width: 127px;
@@ -63,5 +81,9 @@
   background-size: 100% 100%;
   margin: 0 auto;
   background-image: url('@&three-button.png&');
+}
+hh {
+  display: block;
+  height: 20px
 }
 </style>

@@ -1,5 +1,5 @@
 // build by owo frame!
-// Wed Jun 05 2019 16:30:44 GMT+0800 (GMT+08:00)
+// Thu Jun 06 2019 14:07:08 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -47,7 +47,7 @@ window.owo = {
             var searchValue = this.$event.target.value;
 
             if (searchValue === '') {
-              document.getElementsByClassName('search-panel')[0].innerHTML = '';
+              document.getElementsByClassName('search-panel')[0].innerHTML = '<div class="info-text">在上方输入框内键入关键字以搜索</div>';
               return;
             }
 
@@ -82,11 +82,16 @@ window.owo = {
             } // console.log(searchList)
 
 
-            var searchPanel = document.getElementsByClassName('search-panel')[0];
-            searchPanel.innerHTML = searchHtml;
-            setTimeout(function () {
-              _owo.handleEvent(searchPanel, 'searchBar', null);
-            }, 100);
+            var searchPanel = document.getElementsByClassName('search-panel')[0]; // 如果搜索结果为空那么现实结果为空提示
+
+            if (searchHtml === '') {
+              searchPanel.innerHTML = "<div class=\"info-text\">\u6CA1\u6709\u641C\u7D22\u5230\u4E0E\u5173\u952E\u5B57\u76F8\u5173\u5185\u5BB9</div>";
+            } else {
+              searchPanel.innerHTML = searchHtml;
+              setTimeout(function () {
+                _owo.handleEvent(searchPanel, 'searchBar', null);
+              }, 100);
+            }
           },
           "turn": function turn(name) {
             var bookName = unescape(name);
@@ -170,7 +175,7 @@ window.owo = {
             "changeBookshelf": function changeBookshelf(activeItme, activeKey) {
               var _this3 = this;
 
-              console.log(activeItme, activeKey);
+              // console.log(activeItme, activeKey)
               var html = "";
 
               if (!bookData[activeItme]) {
@@ -186,9 +191,9 @@ window.owo = {
                   var element = activeItem[key]; // console.log(element)
 
                   if (element.title) {
-                    html += "<div class=\"book-box\" @click=\"turn(".concat(escape(key), ")\"> <div class=\"book icon\">").concat(key, "</div> <div class=\"info\"> <h4>").concat(element.title, "</h4> <p>").concat(element.summary, "</p> </div> </div>");
+                    html += "<div class=\"book-box\" @click=\"turn(".concat(escape(key), ")\"> <div class=\"book icon\" style=\"font-size: ").concat(element.fontSize ? element.fontSize : '18px', ";line-height: ").concat(element.lineHeight ? element.lineHeight : '25px', ";\">").concat(key, "</div> <div class=\"info\"> <h4>").concat(element.title, "</h4> <p>").concat(element.summary, "</p> </div> </div>");
                   } else {
-                    html += "<div class=\"book-box\" @click=\"turn(".concat(escape(key), ")\"> <div class=\"book icon\">").concat(key, "</div> <div class=\"info\"><p>").concat(element.summary, "</p> </div> </div>");
+                    html += "<div class=\"book-box\" @click=\"turn(".concat(escape(key), ")\"> <div class=\"book icon\" style=\"font-size: ").concat(element.fontSize ? element.fontSize : '18px', ";line-height: ").concat(element.lineHeight ? element.lineHeight : '25px', ";\">").concat(key, "</div> <div class=\"info\"><p>").concat(element.summary, "</p> </div> </div>");
                   }
                 }
               }
@@ -256,6 +261,16 @@ window.owo = {
           "in": 'moveToRight',
           "out": 'moveFromLeft'
         };
+        var textDom = this.$el.getElementsByClassName('text')[0];
+
+        if (owo.global.checkBook) {
+          textDom.style.fontSize = owo.global.checkBook.bookFontSize ? owo.global.checkBook.bookFontSize : '42px';
+          textDom.style.lineHeight = owo.global.checkBook.lineHeight ? owo.global.checkBook.bookLineHeight : '50px';
+          textDom.innerHTML = owo.global.checkBookName;
+        } else {
+          $tool.toast('本书暂时还没有内容哦!');
+          $go('two', 'moveToRight', 'moveFromLeft');
+        }
       },
       "turn": function turn() {
         // $go('four', 'moveToRight', 'moveFromLeft')
@@ -296,10 +311,16 @@ window.owo = {
             }, 0);
           } else {
             $tool.toast('本书暂时还没有内容哦!');
-            $go('two', 'moveToLeft', 'moveFromRight');
+            setTimeout(function () {
+              $go('two', 'moveToRight', 'moveFromLeft');
+            }, 1000);
+            return;
           }
         } else {
-          $go('two', 'moveToLeft', 'moveFromRight');
+          setTimeout(function () {
+            $go('two', 'moveToRight', 'moveFromLeft');
+          }, 1000);
+          return;
         }
       },
       "changeActiveChapter": function changeActiveChapter(activeIndex) {
@@ -334,6 +355,12 @@ window.owo = {
       "hideContentsBox": function hideContentsBox() {
         this.$el.getElementsByClassName('contents-box')[0].style.height = '0';
       },
+      "showShareBox": function showShareBox() {
+        this.$el.getElementsByClassName('share-box')[0].style.display = 'block';
+      },
+      "hideShareBox": function hideShareBox() {
+        this.$el.getElementsByClassName('share-box')[0].style.display = 'none';
+      },
       "changeSize": function changeSize(mode) {
         var content = this.$el.getElementsByClassName('content')[0]; // 清除所有原属性
 
@@ -348,6 +375,14 @@ window.owo = {
           this.changeActiveChapter(owo.global.activeChapter);
         } else {
           $tool.toast('已经是最后一章了!');
+        }
+      },
+      "last": function last() {
+        if (owo.global.checkBook.content[owo.global.activeChapter - 1]) {
+          owo.global.activeChapter--;
+          this.changeActiveChapter(owo.global.activeChapter);
+        } else {
+          $tool.toast('已经是第一章了!');
         }
       }
     }

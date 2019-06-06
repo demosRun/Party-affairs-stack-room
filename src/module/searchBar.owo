@@ -1,12 +1,17 @@
 <template>
   <div class="search-bar">
     <div class="search-box">
-      <div class="icon-box">
-        <svg t="1559538420726" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2384" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px"><path d="M740.2496 696.183467l106.5984 105.745066-44.919467 43.690667-105.984-105.130667A339.968 339.968 0 0 1 477.866667 819.2C289.348267 819.2 136.533333 666.385067 136.533333 477.866667S289.348267 136.533333 477.866667 136.533333s341.333333 152.814933 341.333333 341.333334a339.968 339.968 0 0 1-78.9504 218.3168zM477.866667 750.933333a273.066667 273.066667 0 1 0 0-546.133333 273.066667 273.066667 0 0 0 0 546.133333z" p-id="2385"></path></svg>
+      <div class="search">
+        <div class="icon-box">
+          <svg t="1559538420726" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2384" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px"><path d="M740.2496 696.183467l106.5984 105.745066-44.919467 43.690667-105.984-105.130667A339.968 339.968 0 0 1 477.866667 819.2C289.348267 819.2 136.533333 666.385067 136.533333 477.866667S289.348267 136.533333 477.866667 136.533333s341.333333 152.814933 341.333333 341.333334a339.968 339.968 0 0 1-78.9504 218.3168zM477.866667 750.933333a273.066667 273.066667 0 1 0 0-546.133333 273.066667 273.066667 0 0 0 0 546.133333z" p-id="2385"></path></svg>
+        </div>
+        <input type="text" @input="inputValue" @focus="focus"/>
       </div>
-      <input type="text" @input="inputValue" @focus="focus"/>
+      <div class="logo-text"></div>
     </div>
-    <div class="search-panel"></div>
+    <div class="search-panel">
+      <div class="info-text">在上方输入框内键入关键字以搜索</div>
+    </div>
     <div class="cancel" @click="cancel">取消</div>
   </div>
 </template>
@@ -29,7 +34,7 @@
     inputValue: function () {
       const searchValue = this.$event.target.value
       if (searchValue === '') {
-        document.getElementsByClassName('search-panel')[0].innerHTML = ''
+        document.getElementsByClassName('search-panel')[0].innerHTML = '<div class="info-text">在上方输入框内键入关键字以搜索</div>'
         return
       }
       let searchHtml = ``
@@ -61,10 +66,16 @@
       }
       // console.log(searchList)
       const searchPanel = document.getElementsByClassName('search-panel')[0]
-      searchPanel.innerHTML = searchHtml
-      setTimeout(() => {
-        _owo.handleEvent(searchPanel, 'searchBar', null)
-      }, 100)
+      // 如果搜索结果为空那么现实结果为空提示
+      if (searchHtml === '') {
+        searchPanel.innerHTML = `<div class="info-text">没有搜索到与关键字相关内容</div>`
+      } else {
+        searchPanel.innerHTML = searchHtml
+        setTimeout(() => {
+          _owo.handleEvent(searchPanel, 'searchBar', null)
+        }, 100)
+      }
+      
     },
     turn: function (name) {
       const bookName = unescape(name)
@@ -101,9 +112,14 @@
   display: flex;
   height: 100%;
   width: calc(100% - 60px);
-  background-color: #deb0b3;
-  border-radius: 5px;
   overflow: hidden;
+  position: relative;
+  .search {
+    display: flex;
+    width: calc(100% - 86px);
+    background-color: #deb0b3;
+    border-radius: 5px;
+  }
 }
 input {
   border: none;
@@ -140,5 +156,27 @@ svg {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.info-text {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: #ccc;
+}
+.logo-text {
+  height: 20px;
+  width: 70px;
+  position: absolute;
+  background-size: auto 100%;
+  right: 5px;
+  top: 8px;
+  background-repeat: no-repeat;
+  background-image: url('@&logo-text.png&');
 }
 </style>

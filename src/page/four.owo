@@ -2,9 +2,9 @@
 .four
   //- 顶部导航栏
   .top-bar
-    a.return(href="#three")
+    .return(@click="last")
       .icon &#xe682;
-      span.text 返回
+      span.text 上一章
     .title 中国共产党党章
     .next(@click="next")
       span.text 下一章
@@ -19,7 +19,7 @@
     .bootom-bar-item(@click="showContentsBox")
       .icon &#xe60e;
       p 目录
-    .bootom-bar-item
+    .bootom-bar-item(@click="showShareBox")
       .icon &#xe60f;
       p 分享
   //- 字体大小选择条
@@ -36,6 +36,8 @@
       p.item 过去五年的工作和历史性变革4
       p.item 过去五年的工作和历史性变革4
       p.item 过去五年的工作和历史性变革4
+  //- 分享弹窗
+  .share-box(@click="hideShareBox")
 </template>
 
 <script>
@@ -69,10 +71,16 @@
           }, 0)
         } else {
           $tool.toast('本书暂时还没有内容哦!')
-          $go('two', 'moveToLeft', 'moveFromRight')
+          setTimeout(() => {
+            $go('two', 'moveToRight', 'moveFromLeft')
+          }, 1000)
+          return
         }
       } else {
-        $go('two', 'moveToLeft', 'moveFromRight')
+        setTimeout(() => {
+            $go('two', 'moveToRight', 'moveFromLeft')
+          }, 1000)
+        return
       }
     },
     changeActiveChapter: function (activeIndex) {
@@ -105,6 +113,12 @@
     hideContentsBox: function () {
       this.$el.getElementsByClassName('contents-box')[0].style.height = '0'
     },
+    showShareBox: function () {
+      this.$el.getElementsByClassName('share-box')[0].style.display = 'block'
+    },
+    hideShareBox: function () {
+      this.$el.getElementsByClassName('share-box')[0].style.display = 'none'
+    },
     changeSize: function (mode) {
       const content = this.$el.getElementsByClassName('content')[0]
       // 清除所有原属性
@@ -120,7 +134,15 @@
       } else {
         $tool.toast('已经是最后一章了!')
       }
-    }
+    },
+    last: function () {
+      if (owo.global.checkBook.content[owo.global.activeChapter - 1]) {
+        owo.global.activeChapter --
+        this.changeActiveChapter(owo.global.activeChapter)
+      } else {
+        $tool.toast('已经是第一章了!')
+      }
+    },
   }
 </script>
 
@@ -244,5 +266,18 @@
     color: #191917;
     border-bottom: 1px solid #b1a9a9;
   }
+}
+.share-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-repeat: no-repeat;
+  background-size: 20% auto;
+  background-position: 90% 3%;
+  background-image: url('@&share.png&');
+  background-color: rgba(0, 0, 0, 0.6);
 }
 </style>
