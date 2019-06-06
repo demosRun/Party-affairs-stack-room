@@ -1,5 +1,5 @@
 // build by owo frame!
-// Thu Jun 06 2019 14:07:08 GMT+0800 (GMT+08:00)
+// Thu Jun 06 2019 15:06:17 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -324,6 +324,7 @@ window.owo = {
         }
       },
       "changeActiveChapter": function changeActiveChapter(activeIndex) {
+        // 如果没有上一页了那么将返回
         activeIndex = parseInt(activeIndex);
         owo.global.activeChapter = activeIndex;
         var content = this.$el.getElementsByClassName('content')[0];
@@ -373,6 +374,7 @@ window.owo = {
         if (owo.global.checkBook.content[owo.global.activeChapter + 1]) {
           owo.global.activeChapter++;
           this.changeActiveChapter(owo.global.activeChapter);
+          this.$el.getElementsByClassName('back')[0].innerText = '上一章';
         } else {
           $tool.toast('已经是最后一章了!');
         }
@@ -380,9 +382,14 @@ window.owo = {
       "last": function last() {
         if (owo.global.checkBook.content[owo.global.activeChapter - 1]) {
           owo.global.activeChapter--;
+
+          if (owo.global.activeChapter === 0) {
+            this.$el.getElementsByClassName('back')[0].innerText = '返回';
+          }
+
           this.changeActiveChapter(owo.global.activeChapter);
         } else {
-          $tool.toast('已经是第一章了!');
+          $go('two', 'moveToRight', 'moveFromLeft');
         }
       }
     }
