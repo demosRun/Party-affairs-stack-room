@@ -22,7 +22,7 @@
   </div>
   <div class="two ox" template="two" id="o-two" style="display: none;">
     <div class="search-bar" template="searchBar">
-      <div class="search-box">
+      <div class="search-box clear">
         <div class="search">
           <div class="icon-box">
             <svg t="1559538420726" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2384" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px">
@@ -43,15 +43,15 @@
       <div class="bookshelf"></div>
     </div>
     <ul class="bottom-tab" template="bottomBar">
-      <li class="active" @click="changeItem('党章党规')">
+      <li class="active clear" @click="changeItem('党章党规')">
         <div class="icon"></div>
         <p>党章党规</p>
       </li>
-      <li @click="changeItem('组工文件')">
+      <li class="clear" @click="changeItem('组工文件')">
         <div class="icon"></div>
         <p>组工文件</p>
       </li>
-      <li @click="changeItem('党务知识')">
+      <li class="clear" @click="changeItem('党务知识')">
         <div class="icon"></div>
         <p>党务知识</p>
       </li>
@@ -87,16 +87,16 @@
         <div class="icon"></div>
         <p>目录</p>
       </div>
-      <div class="bootom-bar-item" @click="showShareBox">
+      <div class="bootom-bar-item share-button-box" @click="showShareBox">
         <div class="icon"></div>
         <p>分享</p>
       </div>
     </div>
     <div class="font-size-box" @click="hideSizeBox">
       <div class="font-size">
-        <div class="small item" @click="changeSize('small')">小</div>
-        <div class="middle item" @click="changeSize('middle')">中</div>
-        <div class="large item" @click="changeSize('large')">大</div>
+        <div class="small-button item" @click="changeSize('small')">小</div>
+        <div class="middle-button item" @click="changeSize('middle')">中</div>
+        <div class="large-button item" @click="changeSize('large')">大</div>
       </div>
     </div>
     <div class="contents-box" @click="hideContentsBox">

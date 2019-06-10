@@ -1,13 +1,13 @@
 <template lang="pug">
 ul.bottom-tab
   //-  固定的三列
-  li.active(@click="changeItem('党章党规')")
+  li.active.clear(@click="changeItem('党章党规')")
     .icon &#xe6c7;
     p 党章党规
-  li(@click="changeItem('组工文件')")
+  li.clear(@click="changeItem('组工文件')")
     .icon &#xe64b;
     p 组工文件
-  li(@click="changeItem('党务知识')")
+  li.clear(@click="changeItem('党务知识')")
     .icon &#xe62f;
     p 党务知识
 </template>
@@ -16,7 +16,9 @@ ul.bottom-tab
   module.exports = {
     changeItem: function (item) {
       const domList = this.$el.getElementsByTagName('li')
-      for (let element of domList) {
+      console.log(domList)
+      for (let ind = 0; ind < domList.length; ind++) {
+        const element = domList[ind]
         element.classList.remove('active')
       }
       this.$event.target.classList.add('active')

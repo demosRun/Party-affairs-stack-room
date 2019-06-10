@@ -1,5 +1,5 @@
 // build by owo frame!
-// Thu Jun 06 2019 15:06:17 GMT+0800 (GMT+08:00)
+// Mon Jun 10 2019 15:43:24 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -212,35 +212,23 @@ window.owo = {
             var bookName = unescape(name);
             owo.global.checkBookName = bookName;
             owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName];
-            $go('three', 'moveToLeft', 'moveFromRight');
+
+            if (owo.global.isPC) {
+              $go('four', 'moveToLeft', 'moveFromRight');
+            } else {
+              $go('three', 'moveToLeft', 'moveFromRight');
+            }
           },
           "prop": {}
         },
         "bottomBar": {
           "changeItem": function changeItem(item) {
             var domList = this.$el.getElementsByTagName('li');
-            var _iteratorNormalCompletion2 = true;
-            var _didIteratorError2 = false;
-            var _iteratorError2 = undefined;
+            console.log(domList);
 
-            try {
-              for (var _iterator2 = domList[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                var element = _step2.value;
-                element.classList.remove('active');
-              }
-            } catch (err) {
-              _didIteratorError2 = true;
-              _iteratorError2 = err;
-            } finally {
-              try {
-                if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-                  _iterator2["return"]();
-                }
-              } finally {
-                if (_didIteratorError2) {
-                  throw _iteratorError2;
-                }
-              }
+            for (var ind = 0; ind < domList.length; ind++) {
+              var element = domList[ind];
+              element.classList.remove('active');
             }
 
             this.$event.target.classList.add('active');
@@ -281,7 +269,12 @@ window.owo = {
       "created": function created() {
         var _this4 = this;
 
+        // 判断应该显示返回按钮还是分享
         // 注册返回方式
+        if (owo.global.isPC) {
+          this.$el.getElementsByClassName('share-button-box')[0].innerHTML = '<div class="icon">&#xe641;</div><p>返回</p>';
+        }
+
         owo.state.animation = {
           "in": 'moveToRight',
           "out": 'moveFromLeft' // 默认为第一张
@@ -357,7 +350,12 @@ window.owo = {
         this.$el.getElementsByClassName('contents-box')[0].style.height = '0';
       },
       "showShareBox": function showShareBox() {
-        this.$el.getElementsByClassName('share-box')[0].style.display = 'block';
+        // 电脑是返回
+        if (owo.global.isPC) {
+          $go('two', 'moveToRight', 'moveFromLeft');
+        } else {
+          this.$el.getElementsByClassName('share-box')[0].style.display = 'block';
+        }
       },
       "hideShareBox": function hideShareBox() {
         this.$el.getElementsByClassName('share-box')[0].style.display = 'none';

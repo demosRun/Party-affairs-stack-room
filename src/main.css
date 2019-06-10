@@ -16,12 +16,12 @@ html, body, .ox {
 
 @font-face {
   font-family: 'iconfont';  /* project id 1225486 */
-  src: url('//at.alicdn.com/t/font_1225486_czxfyzakhp.eot');
-  src: url('//at.alicdn.com/t/font_1225486_czxfyzakhp.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1225486_czxfyzakhp.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1225486_czxfyzakhp.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1225486_czxfyzakhp.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1225486_czxfyzakhp.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1225486_l4396p2ffx9.eot');
+  src: url('//at.alicdn.com/t/font_1225486_l4396p2ffx9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1225486_l4396p2ffx9.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1225486_l4396p2ffx9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1225486_l4396p2ffx9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1225486_l4396p2ffx9.svg#iconfont') format('svg');
 }
 
 .icon {
@@ -32,10 +32,119 @@ html, body, .ox {
   user-select: none;
 }
 
+.bookshelf-box::-webkit-scrollbar {
+  width: 5px;
+  height: 1px;
+}
+.bookshelf-box::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  background: #FF5722;
+}
+.bookshelf-box::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background: #EDEDED;
+}
+
 .two .search-bar-active {
   width: calc(100% - 20px);
 }
 .two .search-bar-active .search-panel {
   height: calc(100% - 75px);
   padding: 10px;
+}
+
+.pc [template=topTab] li {
+  font-size: 20px;
+}
+
+.pc [template=topTab] .active {
+  font-size: 22px;
+}
+
+.pc [template=bottomBar] .icon {
+  display: inline;
+  line-height: 44px;
+  width: 44px;
+  font-size: 26px;
+  margin-right: 5px;
+}
+
+.pc [template=bottomBar] p {
+  display: inline;
+  line-height: 44px;
+  font-size: 26px;
+}
+
+.pc [template=searchBar] .logo-text {
+  right: unset;
+  left: 0;
+  height: 32px;
+  width: 120px;
+  top: 2px;
+}
+
+.pc [template=searchBar] .search-box .search {
+  margin-left: 125px;
+}
+
+.pc [template=bookshelf] .info p {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.pc [template=bookshelf] .info h4 {
+  font-size: 18px;
+  line-height: 26px;
+  max-height: 52px;
+}
+
+.pc [template=four] .content {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.pc [template=four] .middle {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.pc [template=four] .large {
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.pc [template=four] .font-size-box .font-size {
+  width: 33.33%;
+}
+
+.pc [template=four] .contents-box .contents {
+  width: 33.33%;
+  left: 33.33%;
+}
+
+.pc [template=four] .bootom-bar .bootom-bar-item .icon {
+  display: inline;
+  line-height: 50px;
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+.pc [template=four] .bootom-bar .bootom-bar-item p {
+  display: inline;
+  line-height: 50px;
+  font-size: 30px;
+}
+
+.pc [template=four] .top-bar {
+  font-size: 22px;
+}
+
+.pc [template=four] .return, .pc [template=four] .next {
+  width: 120px
+}
+
+.pc [template=searchBar] .info-text {
+  font-size: 24px;
 }

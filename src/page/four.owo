@@ -19,15 +19,15 @@
     .bootom-bar-item(@click="showContentsBox")
       .icon &#xe60e;
       p 目录
-    .bootom-bar-item(@click="showShareBox")
+    .bootom-bar-item.share-button-box(@click="showShareBox")
       .icon &#xe60f;
       p 分享
   //- 字体大小选择条
   .font-size-box(@click="hideSizeBox")
     .font-size
-      .small.item(@click="changeSize('small')") 小
-      .middle.item(@click="changeSize('middle')") 中
-      .large.item(@click="changeSize('large')") 大
+      .small-button.item(@click="changeSize('small')") 小
+      .middle-button.item(@click="changeSize('middle')") 中
+      .large-button.item(@click="changeSize('large')") 大
   //- 章节选择
   .contents-box(@click="hideContentsBox")
     .contents
@@ -43,7 +43,11 @@
 <script>
   module.exports = {
     created: function () {
+      // 判断应该显示返回按钮还是分享
       // 注册返回方式
+      if (owo.global.isPC) {
+        this.$el.getElementsByClassName('share-button-box')[0].innerHTML = '<div class="icon">&#xe641;</div><p>返回</p>'
+      }
       owo.state.animation = {
         "in": 'moveToRight',
         "out": 'moveFromLeft'
@@ -115,7 +119,12 @@
       this.$el.getElementsByClassName('contents-box')[0].style.height = '0'
     },
     showShareBox: function () {
-      this.$el.getElementsByClassName('share-box')[0].style.display = 'block'
+      // 电脑是返回
+      if (owo.global.isPC) {
+        $go('two', 'moveToRight', 'moveFromLeft')
+      } else {
+        this.$el.getElementsByClassName('share-box')[0].style.display = 'block'
+      }
     },
     hideShareBox: function () {
       this.$el.getElementsByClassName('share-box')[0].style.display = 'none'
@@ -162,6 +171,7 @@
   width: 70px;
   margin: 0 10px;
   color: white;
+  cursor: pointer;
 }
 .next {
   text-align: right;
@@ -201,6 +211,7 @@
     text-align: center;
     color: #e6a6a6;
     user-select: none;
+    cursor: pointer;
     .icon {
       display: block;
       line-height: 33px;
@@ -240,6 +251,7 @@
     width: 33.33%;
     text-align: center;
     color: #383030;
+    cursor: pointer;
   }
   .middle {
     font-size: 22px;
@@ -270,6 +282,7 @@
     line-height: 40px;
     padding: 0 15px;
     color: #191917;
+    font-weight: bold;
     border-bottom: 1px solid #b1a9a9;
   }
 }

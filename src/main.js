@@ -136,7 +136,12 @@ var bookData = {
   }
 }
 
-setTimeout(() => {
+setTimeout(function () {
   owo.global.activeItme = '党章党规'
   owo.global.activeKey = '党员'
+  // 判断是手机版还是PC版
+  if ($tool.getScreenInfo().ratio > 1) {
+    document.body.classList.add('pc')
+    owo.global.isPC = true
+  }
 }, 0)

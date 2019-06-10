@@ -45,7 +45,11 @@
       const bookName = unescape(name)
       owo.global.checkBookName = bookName
       owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName]
-      $go('three', 'moveToLeft', 'moveFromRight')
+      if (owo.global.isPC) {
+        $go('four', 'moveToLeft', 'moveFromRight')
+      } else {
+        $go('three', 'moveToLeft', 'moveFromRight')
+      }
     }
   }
 </script>
@@ -64,6 +68,8 @@
 .book-box {
   height: 110px;
   position: relative;
+  padding: 0 3%;
+  cursor: pointer;
 }
 .book-box:after {
   content: url('@&right.png&');
@@ -99,6 +105,7 @@
   height: 70px;
   width: 50px;
   margin: 10px;
+  margin-left: 0;
   float: left;
   padding: 10px;
   font-weight: bold;
