@@ -45,11 +45,7 @@
       const bookName = unescape(name)
       owo.global.checkBookName = bookName
       owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName]
-      if (owo.global.isPC) {
-        $go('four', 'moveToLeft', 'moveFromRight')
-      } else {
-        $go('three', 'moveToLeft', 'moveFromRight')
-      }
+      $go('four', 'moveToLeft', 'moveFromRight')
     }
   }
 </script>

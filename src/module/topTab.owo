@@ -32,7 +32,8 @@ ul.top-tab
     },
     changeItem: function () {
       const domList = this.$el.getElementsByTagName('li')
-      for (let element of domList) {
+      for (let ind = 0; ind < domList.length; ind++) {
+        const element = domList[ind]
         element.classList.remove('active')
       }
       // 点亮对应项目

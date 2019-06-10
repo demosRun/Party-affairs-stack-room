@@ -16,9 +16,9 @@ ul.bottom-tab
   module.exports = {
     changeItem: function (item) {
       const domList = this.$el.getElementsByTagName('li')
-      console.log(domList)
       for (let ind = 0; ind < domList.length; ind++) {
         const element = domList[ind]
+        console.log(element)
         element.classList.remove('active')
       }
       this.$event.target.classList.add('active')

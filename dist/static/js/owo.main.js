@@ -1,5 +1,5 @@
 // build by owo frame!
-// Mon Jun 10 2019 15:43:24 GMT+0800 (GMT+08:00)
+// Mon Jun 10 2019 17:15:25 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -133,30 +133,12 @@ window.owo = {
           },
           "changeItem": function changeItem() {
             var domList = this.$el.getElementsByTagName('li');
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
 
-            try {
-              for (var _iterator = domList[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var element = _step.value;
-                element.classList.remove('active');
-              } // 点亮对应项目
+            for (var ind = 0; ind < domList.length; ind++) {
+              var element = domList[ind];
+              element.classList.remove('active');
+            } // 点亮对应项目
 
-            } catch (err) {
-              _didIteratorError = true;
-              _iteratorError = err;
-            } finally {
-              try {
-                if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-                  _iterator["return"]();
-                }
-              } finally {
-                if (_didIteratorError) {
-                  throw _iteratorError;
-                }
-              }
-            }
 
             this.$event.target.classList.add('active'); // 切换书架内容
 
@@ -212,22 +194,17 @@ window.owo = {
             var bookName = unescape(name);
             owo.global.checkBookName = bookName;
             owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName];
-
-            if (owo.global.isPC) {
-              $go('four', 'moveToLeft', 'moveFromRight');
-            } else {
-              $go('three', 'moveToLeft', 'moveFromRight');
-            }
+            $go('four', 'moveToLeft', 'moveFromRight');
           },
           "prop": {}
         },
         "bottomBar": {
           "changeItem": function changeItem(item) {
             var domList = this.$el.getElementsByTagName('li');
-            console.log(domList);
 
             for (var ind = 0; ind < domList.length; ind++) {
               var element = domList[ind];
+              console.log(element);
               element.classList.remove('active');
             }
 
@@ -675,7 +652,7 @@ function $go(pageName, inAnimation, outAnimation, param) {
 
     paramString = paramString.slice(0, -1);
   }
-
+  alert(paramString + "#" + pageName)
   window.location.href = paramString + "#" + pageName;
 }
 
@@ -743,10 +720,12 @@ _owo.ready = function () {
 
 
 window.onhashchange = function (e) {
-  var oldUrlParam = getarg(e.oldURL); // 如果旧页面不存在则为默认页面
+  // 这样处理而不是直接用event中的URL，是因为需要兼容IE
+  owo.global.oldUrlParam = owo.global.newUrlParam;
+  owo.global.newUrlParam = getarg(document.URL); // 如果旧页面不存在则为默认页面
 
-  if (!oldUrlParam) oldUrlParam = owo.entry;
-  var newUrlParam = getarg(e.newURL); // 如果没有跳转到任何页面则跳转到主页
+  if (!owo.global.oldUrlParam) owo.global.oldUrlParam = owo.entry;
+  var newUrlParam = owo.global.newUrlParam; // 如果没有跳转到任何页面则跳转到主页
 
   if (newUrlParam === undefined) {
     newUrlParam = owo.entry;
@@ -754,7 +733,7 @@ window.onhashchange = function (e) {
   // 切换页面特效
 
 
-  switchPage(oldUrlParam, newUrlParam);
+  switchPage(owo.global.oldUrlParam, newUrlParam);
 };
 /*
  * 传递函数给whenReady()

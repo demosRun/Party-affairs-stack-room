@@ -148,3 +148,16 @@ html, body, .ox {
 .pc [template=searchBar] .info-text {
   font-size: 24px;
 }
+
+.pc [template=four] .title {
+  font-size: 22px;
+}
+
+.two {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
