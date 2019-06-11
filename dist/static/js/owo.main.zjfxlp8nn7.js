@@ -1,5 +1,5 @@
 // build by owo frame!
-// Mon Jun 10 2019 17:15:25 GMT+0800 (GMT+08:00)
+// Tue Jun 11 2019 08:23:30 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -652,7 +652,7 @@ function $go(pageName, inAnimation, outAnimation, param) {
 
     paramString = paramString.slice(0, -1);
   }
-  alert(paramString + "#" + pageName)
+
   window.location.href = paramString + "#" + pageName;
 }
 
@@ -719,7 +719,7 @@ _owo.ready = function () {
 }; // url发生改变事件
 
 
-window.onhashchange = function (e) {
+function hashchange(e) {
   // 这样处理而不是直接用event中的URL，是因为需要兼容IE
   owo.global.oldUrlParam = owo.global.newUrlParam;
   owo.global.newUrlParam = getarg(document.URL); // 如果旧页面不存在则为默认页面
@@ -734,7 +734,14 @@ window.onhashchange = function (e) {
 
 
   switchPage(owo.global.oldUrlParam, newUrlParam);
-};
+} // ios的QQ有BUG 无法触发onhashchange事件
+
+
+if (/iPhone\sOS.*QQ[^B]/.test(navigator.userAgent)) {
+  window.onpopstate = hashchange;
+} else {
+  window.onhashchange = hashchange;
+}
 /*
  * 传递函数给whenReady()
  * 当文档解析完毕且为操作准备就绪时，函数作为document的方法调用
