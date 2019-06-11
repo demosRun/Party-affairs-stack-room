@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>{TAG_14226_TAG}</title>
+  <!-- 页面的元信息 -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="keywords" content="{TAG_59446_TAG}" />
+  <meta name="description" content="{TAG_59447_TAG}" />
+  <meta name="filetype" content="1" />
+  <meta name="publishedtype" content="1" />
+  <meta name="pagetype" content="2" />
+  <meta name="screen-orientation" content="portrait" />
+  <meta name="x5-orientation" content="portrait" />
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="browsermode" content="application" />
+  <meta name="x5-page-mode" content="app" />
+  <!-- 页面主样式文件 -->
+  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.main.euc2j08t64a.css">
+</head>
+
+<body>
+  <!-- 页面区域 -->
+  <div class="one ox" template="one" id="o-one" style="display: none;">
+    <div class="logo"></div>
+    <div class="text"></div>
+    <div class="button" @click="close"></div>
+  </div>
+  <div class="two ox" template="two" id="o-two" style="display: none;">
+    <div class="search-bar" template="searchBar">
+      <div class="search-box clear">
+        <div class="search">
+          <div class="icon-box">
+            <svg t="1559538420726" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2384" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px">
+              <path d="M740.2496 696.183467l106.5984 105.745066-44.919467 43.690667-105.984-105.130667A339.968 339.968 0 0 1 477.866667 819.2C289.348267 819.2 136.533333 666.385067 136.533333 477.866667S289.348267 136.533333 477.866667 136.533333s341.333333 152.814933 341.333333 341.333334a339.968 339.968 0 0 1-78.9504 218.3168zM477.866667 750.933333a273.066667 273.066667 0 1 0 0-546.133333 273.066667 273.066667 0 0 0 0 546.133333z" p-id="2385"></path>
+            </svg>
+          </div>
+          <input type="text" @input="inputValue" @focus="focus">
+        </div>
+        <div class="logo-text"></div>
+      </div>
+      <div class="search-panel">
+        <div class="info-text">在上方输入框内键入关键字以搜索</div>
+      </div>
+      <div class="cancel" @click="cancel">取消</div>
+    </div>
+    <ul class="top-tab" template="topTab"></ul>
+    <div class="bookshelf-box" template="bookshelf">
+      <div class="bookshelf"></div>
+    </div>
+    <ul class="bottom-tab" template="bottomBar">
+      <li class="active clear" @click="changeItem('党章党规')">
+        <div class="icon"></div>
+        <p>党章党规</p>
+      </li>
+      <li class="clear" @click="changeItem('组工文件')">
+        <div class="icon"></div>
+        <p>组工文件</p>
+      </li>
+      <li class="clear" @click="changeItem('党务知识')">
+        <div class="icon"></div>
+        <p>党务知识</p>
+      </li>
+    </ul>
+  </div>
+  <div class="four ox" template="four" id="o-four" style="display: none;">
+    <div class="top-bar">
+      <div class="return" @click="last">
+        <div class="icon"></div>
+        <span class="text back">返回</span>
+      </div>
+      <div class="title">中国共产党党章</div>
+      <div class="next" @click="next">
+        <span class="text">下一章</span>
+        <div class="icon"></div>
+      </div>
+    </div>
+    <div class="content"></div>
+    <div class="bootom-bar">
+      <div class="bootom-bar-item" @click="showSizeBox">
+        <div class="icon"></div>
+        <p>字号</p>
+      </div>
+      <div class="bootom-bar-item" @click="showContentsBox">
+        <div class="icon"></div>
+        <p>目录</p>
+      </div>
+      <div class="bootom-bar-item share-button-box" @click="showShareBox">
+        <div class="icon"></div>
+        <p>分享</p>
+      </div>
+    </div>
+    <div class="font-size-box" @click="hideSizeBox">
+      <div class="font-size">
+        <div class="small-button item" @click="changeSize('small')">小</div>
+        <div class="middle-button item" @click="changeSize('middle')">中</div>
+        <div class="large-button item" @click="changeSize('large')">大</div>
+      </div>
+    </div>
+    <div class="contents-box" @click="hideContentsBox">
+      <div class="contents">
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
+        <p class="item">过去五年的工作和历史性变革4</p>
+      </div>
+    </div>
+    <div class="share-box" @click="hideShareBox"></div>
+  </div>
+  <!-- 框架script文件 -->
+  <script src="./static/js/owo.main.euc2j08t64a.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
+  <script>
+    var contentItem = [
+      {
+        "name": "过去五年的工作和历史性变革",
+        "text": "11111111111111111111111111中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最11111111111111111111111111中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。广大人民的根本利益。党的最高理想和最终目标是实现共产主义。"
+      },
+      {
+        "name": "过去五年的工作和历史性变革2",
+        "text": "222222222222222222222222222222222222中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。"
+      },
+      {
+        "name": "过去五年的工作和历史性变革3",
+        "text": "333333333333333333333333333333333333333中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。"
+      },
+      {
+        "name": "过去五年的工作和历史性变革4",
+        "text": "4444444444444444444444444444444444444444中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。"
+      },
+    ]
+    // 返回到哪个地址
+    var returnLink = 'index.html#two'
+
+    
+    setTimeout(function () {
+      owo.global.activeItme = '党章党规'
+      owo.global.activeKey = '党员'
+      // 判断是手机版还是PC版
+      if ($tool.getScreenInfo().ratio > 1) {
+        document.body.classList.add('pc')
+        owo.global.isPC = true
+      }
+    }, 0)
+  </script>
+</body>
+
+</html>

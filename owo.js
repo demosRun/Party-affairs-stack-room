@@ -4,7 +4,7 @@ module.exports = {
   // 项目入口文件
   entry: "one",
   // 页面标题
-  title: '页面',
+  title: '{TAG_14226_TAG}',
   // 输出目录
   outFolder: "./dist",
   // 资源目录
@@ -18,6 +18,70 @@ module.exports = {
     {
       name: 'viewport',
       content: 'initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no',
+    },
+    {
+      name: 'format-detection',
+      content: 'telephone=no, email=no',
+    },
+    {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes',
+    },
+    {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: 'white',
+    },
+    {
+      name: 'renderer',
+      content: 'webkit',
+    },
+    {
+      "http-equiv": 'X-UA-Compatible',
+      content: 'IE=edge,chrome=1',
+    },
+    {
+      name: 'keywords',
+      content: '{TAG_59446_TAG}',
+    },
+    {
+      name: 'description',
+      content: '{TAG_59447_TAG}',
+    },
+    {
+      name: 'filetype',
+      content: '1',
+    },
+    {
+      name: 'publishedtype',
+      content: '1',
+    },
+    {
+      name: 'pagetype',
+      content: '2',
+    },
+    {
+      name: 'screen-orientation',
+      content: 'portrait',
+    },
+    {
+      name: 'x5-orientation',
+      content: 'portrait',
+    },
+    {
+      name: 'full-screen',
+      content: 'yes',
+    },
+    {
+      name: 'x5-fullscreen',
+      content: 'true',
+    },
+    {
+      name: 'browsermode',
+      content: 'application',
+    },
+    {
+      name: 'x5-page-mode',
+      content: 'app',
     }
   ],
   // 使用到的外部脚本清单

@@ -1,5 +1,5 @@
 // build by owo frame!
-// Tue Jun 11 2019 08:23:30 GMT+0800 (GMT+08:00)
+// Tue Jun 11 2019 08:48:48 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -97,7 +97,7 @@ window.owo = {
             var bookName = unescape(name);
             owo.global.checkBookName = bookName;
             owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName];
-            $go('three', 'moveToLeft', 'moveFromRight');
+            window.location.href = `${owo.global.checkBook.title}.html`
           },
           "prop": {}
         },
@@ -194,7 +194,7 @@ window.owo = {
             var bookName = unescape(name);
             owo.global.checkBookName = bookName;
             owo.global.checkBook = bookData[owo.global.activeItme][owo.global.activeKey][bookName];
-            $go('four', 'moveToLeft', 'moveFromRight');
+            window.location.href = `${owo.global.checkBook.title}.html`
           },
           "prop": {}
         },
@@ -219,155 +219,6 @@ window.owo = {
         }
       }
     },
-    "three": {
-      "created": function created() {
-        // 注册返回方式
-        owo.state.animation = {
-          "in": 'moveToRight',
-          "out": 'moveFromLeft'
-        };
-        var textDom = this.$el.getElementsByClassName('text')[0];
-
-        if (owo.global.checkBook) {
-          textDom.style.fontSize = owo.global.checkBook.bookFontSize ? owo.global.checkBook.bookFontSize : '42px';
-          textDom.style.lineHeight = owo.global.checkBook.lineHeight ? owo.global.checkBook.bookLineHeight : '50px';
-          textDom.innerHTML = owo.global.checkBookName;
-        } else {
-          $tool.toast('本书暂时还没有内容哦!');
-          $go('two', 'moveToRight', 'moveFromLeft');
-        }
-      },
-      "turn": function turn() {
-        // $go('four', 'moveToRight', 'moveFromLeft')
-        $go('four', 'moveToLeft', 'moveFromRight');
-      }
-    },
-    "four": {
-      "created": function created() {
-        var _this4 = this;
-
-        // 判断应该显示返回按钮还是分享
-        // 注册返回方式
-        if (owo.global.isPC) {
-          this.$el.getElementsByClassName('share-button-box')[0].innerHTML = '<div class="icon">&#xe641;</div><p>返回</p>';
-        }
-
-        owo.state.animation = {
-          "in": 'moveToRight',
-          "out": 'moveFromLeft' // 默认为第一张
-
-        };
-        owo.global.activeChapter = 0; // 如果选择了书籍那么取出书籍内容，如果没有返回书籍目录
-
-        if (owo.global.checkBook) {
-          // 如果第一章都没有内容那么就返回选择列表
-          if (owo.global.checkBook.content && owo.global.checkBook.content[0]) {
-            this.changeActiveChapter(owo.global.activeChapter); // 更新章节信息
-
-            var contentsHtml = '';
-
-            for (var ind in owo.global.checkBook.content) {
-              if (owo.global.checkBook.content.hasOwnProperty(ind)) {
-                var element = owo.global.checkBook.content[ind];
-                contentsHtml += "<p class=\"item\" @click=\"changeActiveChapter(".concat(ind, ")\">").concat(parseInt(ind) + 1, ".&nbsp;&nbsp;&nbsp;").concat(element.name, "</p>");
-              }
-            }
-
-            var contentsDom = this.$el.getElementsByClassName('contents')[0];
-            contentsDom.innerHTML = contentsHtml; // 更新dom
-
-            setTimeout(function () {
-              _owo.handleEvent(contentsDom, null, _this4.$el);
-            }, 0);
-          } else {
-            $tool.toast('本书暂时还没有内容哦!');
-            setTimeout(function () {
-              $go('two', 'moveToRight', 'moveFromLeft');
-            }, 1000);
-            return;
-          }
-        } else {
-          setTimeout(function () {
-            $go('two', 'moveToRight', 'moveFromLeft');
-          }, 1000);
-          return;
-        }
-      },
-      "changeActiveChapter": function changeActiveChapter(activeIndex) {
-        // 如果没有上一页了那么将返回
-        activeIndex = parseInt(activeIndex);
-        owo.global.activeChapter = activeIndex;
-        var content = this.$el.getElementsByClassName('content')[0];
-        content.innerText = owo.global.checkBook.content[activeIndex].text;
-      },
-      "showSizeBox": function showSizeBox() {
-        this.hideContentsBox();
-        var sizeDom = this.$el.getElementsByClassName('font-size-box')[0];
-
-        if (sizeDom.style.display !== 'block') {
-          sizeDom.style.display = 'block';
-        } else {
-          this.hideSizeBox();
-        }
-      },
-      "hideSizeBox": function hideSizeBox() {
-        this.$el.getElementsByClassName('font-size-box')[0].style.display = 'none';
-      },
-      "showContentsBox": function showContentsBox() {
-        this.hideSizeBox();
-        var contentsDom = this.$el.getElementsByClassName('contents-box')[0];
-
-        if (contentsDom.style.height !== '100%') {
-          contentsDom.style.height = '100%';
-        } else {
-          this.hideContentsBox();
-        }
-      },
-      "hideContentsBox": function hideContentsBox() {
-        this.$el.getElementsByClassName('contents-box')[0].style.height = '0';
-      },
-      "showShareBox": function showShareBox() {
-        // 电脑是返回
-        if (owo.global.isPC) {
-          $go('two', 'moveToRight', 'moveFromLeft');
-        } else {
-          this.$el.getElementsByClassName('share-box')[0].style.display = 'block';
-        }
-      },
-      "hideShareBox": function hideShareBox() {
-        this.$el.getElementsByClassName('share-box')[0].style.display = 'none';
-      },
-      "changeSize": function changeSize(mode) {
-        var content = this.$el.getElementsByClassName('content')[0]; // 清除所有原属性
-
-        content.classList.remove('small');
-        content.classList.remove('middle');
-        content.classList.remove('large');
-        content.classList.add(mode);
-      },
-      "next": function next() {
-        if (owo.global.checkBook.content[owo.global.activeChapter + 1]) {
-          owo.global.activeChapter++;
-          this.changeActiveChapter(owo.global.activeChapter);
-          this.$el.getElementsByClassName('back')[0].innerText = '上一章';
-        } else {
-          $tool.toast('已经是最后一章了!');
-        }
-      },
-      "last": function last() {
-        if (owo.global.checkBook.content[owo.global.activeChapter - 1]) {
-          owo.global.activeChapter--;
-
-          if (owo.global.activeChapter === 0) {
-            this.$el.getElementsByClassName('back')[0].innerText = '返回';
-          }
-
-          this.changeActiveChapter(owo.global.activeChapter);
-        } else {
-          $go('two', 'moveToRight', 'moveFromLeft');
-        }
-      }
-    }
   },
   // 页面默认入口
   entry: "one"
